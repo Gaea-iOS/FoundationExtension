@@ -41,7 +41,7 @@ open class ImageTextAttachment: NSTextAttachment {
         case let .scale(scale):
             let height = lineFrag.height * scale
             let width = height * image.size.width / image.size.height
-            attachmentSize = CGSize(width: width, height: lineFrag.height)
+            attachmentSize = CGSize(width: width, height: height)
         case let .custom(size):
             attachmentSize = size
         }
