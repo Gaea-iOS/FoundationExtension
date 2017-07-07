@@ -13,6 +13,10 @@ public enum ImageTextAttachmentVerticalAlignment {
     case center
 }
 
+public enum ImageTextAttachmentSize {
+    case scale(CGFloat)
+    case custom(CGSize)
+}
 /// 参考https://stackoverflow.com/questions/22647439/what-is-the-relationship-between-a-font-glyph-ascender-and-descender-in-ios
 
 /// 使用ImageTextAttachment时最好配合FTLabel来用。
@@ -21,10 +25,7 @@ public enum ImageTextAttachmentVerticalAlignment {
 
 open class ImageTextAttachment: NSTextAttachment {
     
-    open var imageSize: CGSize = .zero
-    
-    // 当imageSize为.zero时生效
-    open var isImageScallToFitFontLineHeight: Bool = true
+    open var imageSize: ImageTextAttachmentSize = .scale(1.0)
     
     open var attachmentTextVerticalAlignment: ImageTextAttachmentVerticalAlignment = .center
     
@@ -36,13 +37,13 @@ open class ImageTextAttachment: NSTextAttachment {
         
         var attachmentSize: CGSize = .zero
         
-        if !imageSize.equalTo(.zero) {
-            attachmentSize = imageSize
-        } else if isImageScallToFitFontLineHeight && image.size.height != 0 {
-            let width = lineFrag.height * image.size.width / image.size.height
+        switch imageSize {
+        case let .scale(scale):
+            let height = lineFrag.height * scale
+            let width = height * image.size.width / image.size.height
             attachmentSize = CGSize(width: width, height: lineFrag.height)
-        } else {
-            attachmentSize = image.size
+        case let .custom(size):
+            attachmentSize = size
         }
 
         var y: CGFloat = {

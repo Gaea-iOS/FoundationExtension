@@ -22,10 +22,25 @@ extension NSTextAttachment {
 
 
 extension UIImage {
-    public func toImageTextAttachment() -> ImageTextAttachment {
+    public func toImageTextAttachment(size: ImageTextAttachmentSize = .scale(1.0)) -> ImageTextAttachment {
         let attachment = ImageTextAttachment()
         attachment.image = self
+        attachment.imageSize = size
         return attachment
+    }
+    
+    public func toAttributedString(size: ImageTextAttachmentSize = .scale(1.0)) -> NSAttributedString {
+        return toImageTextAttachment(size: size).toAttributedString()
+    }
+}
+
+extension UIView {
+    public func toImageTextAttachment(size: ImageTextAttachmentSize = .scale(1.0)) -> ImageTextAttachment {
+        return snapshotImage.toImageTextAttachment(size: size)
+    }
+    
+    public func toAttributedString(size: ImageTextAttachmentSize = .scale(1.0)) -> NSAttributedString {
+        return toImageTextAttachment(size: size).toAttributedString()
     }
 }
 

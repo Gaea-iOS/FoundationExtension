@@ -26,6 +26,7 @@
 		1BA2033C1F0FE42500D45208 /* ImageTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2033B1F0FE42500D45208 /* ImageTextAttachment.swift */; };
 		1BA2033E1F0FE42B00D45208 /* NSAttributedString+Convinent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2033D1F0FE42B00D45208 /* NSAttributedString+Convinent.swift */; };
 		1BA203401F0FE4B100D45208 /* UIImage+FromColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2033F1F0FE4B100D45208 /* UIImage+FromColor.swift */; };
+		1BA203441F0FEDAF00D45208 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203431F0FEDAF00D45208 /* UIView+Snapshot.swift */; };
 		3A1B968C3BFA604BBE40C2B569BBC248 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		3F3E391953EDECE196A443B9068D786F /* Pods-FoundationExtension_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63553B3CAB48D6014B8C8CA23F331F4B /* Pods-FoundationExtension_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		408D2843FD0BA512EE9985F57AF5A32D /* Pods-FoundationExtension_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DD45E3AF318C764475E91EAF8AF6D /* Pods-FoundationExtension_Example-dummy.m */; };
@@ -65,6 +66,7 @@
 		1BA2033B1F0FE42500D45208 /* ImageTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTextAttachment.swift; sourceTree = "<group>"; };
 		1BA2033D1F0FE42B00D45208 /* NSAttributedString+Convinent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Convinent.swift"; sourceTree = "<group>"; };
 		1BA2033F1F0FE4B100D45208 /* UIImage+FromColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FromColor.swift"; sourceTree = "<group>"; };
+		1BA203431F0FEDAF00D45208 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		1F876EC75FF5FD48ADB9A9A3FE556CBC /* Pods-FoundationExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoundationExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		24A122C24B2E3FB0E20776CEC063E9EF /* FoundationExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FoundationExtension-dummy.m"; sourceTree = "<group>"; };
 		2A15BAC876DC164FBC48B0348EB96320 /* Pods-FoundationExtension_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FoundationExtension_Example.modulemap"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				1BA203261F0F960600D45208 /* UIPickerView+Separator.swift */,
 				1BA2032C1F0F96DB00D45208 /* UIView+IBDesignable.swift */,
 				1BA2032E1F0F974C00D45208 /* UIButton+IBInspectable.swift */,
+				1BA203431F0FEDAF00D45208 /* UIView+Snapshot.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				1BA2033C1F0FE42500D45208 /* ImageTextAttachment.swift in Sources */,
 				1BA2031E1F0F949200D45208 /* String+ToNumber.swift in Sources */,
 				1BA2032F1F0F974C00D45208 /* UIButton+IBInspectable.swift in Sources */,
+				1BA203441F0FEDAF00D45208 /* UIView+Snapshot.swift in Sources */,
 				1BA203291F0F964500D45208 /* delay.swift in Sources */,
 				1BA2031B1F0F949200D45208 /* NSAttributedString+Size.swift in Sources */,
 				1BA2031D1F0F949200D45208 /* String+Size.swift in Sources */,

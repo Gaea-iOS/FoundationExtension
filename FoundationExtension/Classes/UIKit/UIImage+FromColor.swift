@@ -17,9 +17,10 @@ public extension UIImage {
         UIGraphicsBeginImageContext(rect.size)
         defer { UIGraphicsEndImageContext() }
         
-        let context = UIGraphicsGetCurrentContext()
-        context!.setFillColor(color.cgColor)
-        context!.fill(rect)
-        return UIGraphicsGetImageFromCurrentImageContext()!
+        let context = UIGraphicsGetCurrentContext()!
+        context.setFillColor(color.cgColor)
+        context.fill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        return image
     }
 }
