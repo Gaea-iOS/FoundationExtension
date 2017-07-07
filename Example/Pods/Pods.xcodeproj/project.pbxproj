@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		1036FE6564AF5BCEDD2763CEDE2C2C95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		16A2ADF7E163A146E031863C86F684B4 /* Pods-FoundationExtension_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09EEDE52707DCA1CC71C22FDD757DC5B /* Pods-FoundationExtension_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BA2031B1F0F949200D45208 /* NSAttributedString+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203151F0F949200D45208 /* NSAttributedString+Height.swift */; };
+		1BA2031B1F0F949200D45208 /* NSAttributedString+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203151F0F949200D45208 /* NSAttributedString+Size.swift */; };
 		1BA2031C1F0F949200D45208 /* Number+TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203161F0F949200D45208 /* Number+TimeUnit.swift */; };
-		1BA2031D1F0F949200D45208 /* String+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203171F0F949200D45208 /* String+Height.swift */; };
+		1BA2031D1F0F949200D45208 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203171F0F949200D45208 /* String+Size.swift */; };
 		1BA2031E1F0F949200D45208 /* String+ToNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203181F0F949200D45208 /* String+ToNumber.swift */; };
 		1BA2031F1F0F949200D45208 /* UIView+Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2031A1F0F949200D45208 /* UIView+Parent.swift */; };
 		1BA203211F0F94E600D45208 /* SeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203201F0F94E600D45208 /* SeparatorTableViewCell.swift */; };
@@ -46,9 +46,9 @@
 /* Begin PBXFileReference section */
 		09EEDE52707DCA1CC71C22FDD757DC5B /* Pods-FoundationExtension_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FoundationExtension_Tests-umbrella.h"; sourceTree = "<group>"; };
 		196C3934FD0CAB1D0C91E97B9B292941 /* Pods-FoundationExtension_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FoundationExtension_Example-frameworks.sh"; sourceTree = "<group>"; };
-		1BA203151F0F949200D45208 /* NSAttributedString+Height.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Height.swift"; sourceTree = "<group>"; };
+		1BA203151F0F949200D45208 /* NSAttributedString+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Size.swift"; sourceTree = "<group>"; };
 		1BA203161F0F949200D45208 /* Number+TimeUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+TimeUnit.swift"; sourceTree = "<group>"; };
-		1BA203171F0F949200D45208 /* String+Height.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Height.swift"; sourceTree = "<group>"; };
+		1BA203171F0F949200D45208 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		1BA203181F0F949200D45208 /* String+ToNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ToNumber.swift"; sourceTree = "<group>"; };
 		1BA2031A1F0F949200D45208 /* UIView+Parent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Parent.swift"; sourceTree = "<group>"; };
 		1BA203201F0F94E600D45208 /* SeparatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,9 +133,9 @@
 		1BA203141F0F949200D45208 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				1BA203151F0F949200D45208 /* NSAttributedString+Height.swift */,
+				1BA203151F0F949200D45208 /* NSAttributedString+Size.swift */,
 				1BA203161F0F949200D45208 /* Number+TimeUnit.swift */,
-				1BA203171F0F949200D45208 /* String+Height.swift */,
+				1BA203171F0F949200D45208 /* String+Size.swift */,
 				1BA203181F0F949200D45208 /* String+ToNumber.swift */,
 				1BA203241F0F95A000D45208 /* Number+ToString.swift */,
 				1BA203301F0F97AD00D45208 /* UIImage+FromColor.swift */,
@@ -411,8 +411,8 @@
 				1BA2031E1F0F949200D45208 /* String+ToNumber.swift in Sources */,
 				1BA2032F1F0F974C00D45208 /* UIButton+IBInspectable.swift in Sources */,
 				1BA203291F0F964500D45208 /* delay.swift in Sources */,
-				1BA2031B1F0F949200D45208 /* NSAttributedString+Height.swift in Sources */,
-				1BA2031D1F0F949200D45208 /* String+Height.swift in Sources */,
+				1BA2031B1F0F949200D45208 /* NSAttributedString+Size.swift in Sources */,
+				1BA2031D1F0F949200D45208 /* String+Size.swift in Sources */,
 				1BA203211F0F94E600D45208 /* SeparatorTableViewCell.swift in Sources */,
 				1BA2031C1F0F949200D45208 /* Number+TimeUnit.swift in Sources */,
 				1BA2032D1F0F96DB00D45208 /* UIView+IBDesignable.swift in Sources */,
