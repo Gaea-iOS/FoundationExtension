@@ -23,6 +23,10 @@ public extension TimeUnit {
             return Date(timeIntervalSince1970: timestamp / 1000)
         }
     }
+    
+    func toDateString<T: RawRepresentable>(by formate: T) -> String? where T.RawValue == String {
+        return toDate().toString(by: formate.rawValue)
+    }
 }
 
 public extension TimeInterval {
