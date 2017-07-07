@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'FoundationExtension'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of FoundationExtension.'
+  s.summary          = 'an extension for NSFoundation and UIKit'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+an extension for NSFoundation and UIKit and some utils.
                        DESC
 
-  s.homepage         = 'https://github.com/wangxiaotao/FoundationExtension'
+  s.homepage         = 'https://github.com/Gaea-iOS/FoundationExtension'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wangxiaotao' => '445242970@qq.com' }
-  s.source           = { :git => 'https://github.com/wangxiaotao/FoundationExtension.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Gaea-iOS/FoundationExtension.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
