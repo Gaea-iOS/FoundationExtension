@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class SeparatorTableViewCell: UITableViewCell {
+open class SeparatorTableViewCell: UITableViewCell {
     
     public enum SeparatorPosition {
         case top
