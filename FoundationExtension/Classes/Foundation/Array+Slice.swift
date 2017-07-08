@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension Array {
+extension Array {
     
-    func slice(by byn: Int) -> [[Generator.Element]] {
+    public func slice(by byn: Int) -> [[Generator.Element]] {
         
         if count <= 0 {
             return []

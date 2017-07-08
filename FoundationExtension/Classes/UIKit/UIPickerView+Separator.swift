@@ -8,15 +8,15 @@
 
 import UIKit
 
-public extension UIPickerView {
+extension UIPickerView {
     
-    private struct UIPickerViewAssociatedKeys {
-        static var isSeperatorHidden = "isSeperatorHidden"
+    private struct AssociatedKeys {
+        static var isSeperatorHidden = "AssociatedKeys_isSeperatorHidden"
     }
     
-    var isSeperatorHidden: Bool {
+    public var isSeperatorHidden: Bool {
         get {
-            if let bool = objc_getAssociatedObject(self, &UIPickerViewAssociatedKeys.isSeperatorHidden) as? Bool {
+            if let bool = objc_getAssociatedObject(self, &AssociatedKeys.isSeperatorHidden) as? Bool {
                 return bool
             } else {
                 return false
@@ -28,7 +28,7 @@ public extension UIPickerView {
                     $0.isHidden = newValue
                 }
             }
-            objc_setAssociatedObject(isSeperatorHidden, &UIPickerViewAssociatedKeys.isSeperatorHidden, newValue, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(isSeperatorHidden, &AssociatedKeys.isSeperatorHidden, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
 }

@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension NSAttributedString {
+extension NSAttributedString {
     
-    func size(`in` constraintedSize: CGSize, font: UIFont) -> CGSize {
+    public func size(`in` constraintedSize: CGSize, font: UIFont) -> CGSize {
         let label = UILabel(frame: CGRect(origin: .zero, size: constraintedSize))
         label.attributedText = self
         label.numberOfLines = 0

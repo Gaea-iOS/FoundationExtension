@@ -8,9 +8,9 @@
 
 import UIKit
 
-public extension UIView {
+extension UIView {
     
-    var parentViewController: UIViewController? {
+    public var parentViewController: UIViewController? {
         get {
             var nextResponder = self.next
             while nextResponder != nil  {
@@ -23,7 +23,7 @@ public extension UIView {
         }
     }
     
-    var parentTableView: UITableView? {
+    public var parentTableView: UITableView? {
         get {
             var superview = self.superview
             while superview != nil {
@@ -36,7 +36,7 @@ public extension UIView {
         }
     }
     
-    var parentCollectionView: UICollectionView? {
+    public var parentCollectionView: UICollectionView? {
         get {
             var superview = self.superview
             while superview != nil {

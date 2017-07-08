@@ -13,9 +13,9 @@ public enum TimeUnit {
     case millisecond(TimeInterval)
 }
 
-public extension TimeUnit {
+extension TimeUnit {
     
-    func toDate() -> Date {
+    public func toDate() -> Date {
         switch self {
         case let .second(timestamp):
             return Date(timeIntervalSince1970: timestamp)
@@ -24,97 +24,97 @@ public extension TimeUnit {
         }
     }
     
-    func toDateString<T: RawRepresentable>(by formate: T) -> String? where T.RawValue == String {
+    public func toDateString<T: RawRepresentable>(by formate: T) -> String? where T.RawValue == String {
         return toDate().toString(by: formate.rawValue)
     }
 }
 
-public extension TimeInterval {
-    var seconds: TimeUnit {
+extension TimeInterval {
+    public var seconds: TimeUnit {
         return .second(self)
     }
-    var milliseconds: TimeUnit {
+    public var milliseconds: TimeUnit {
         return .millisecond(self)
     }
 }
 
-public extension Int {
-    var seconds: TimeUnit {
+extension Int {
+    public var seconds: TimeUnit {
         return .second(TimeInterval(self))
     }
-    var milliseconds: TimeUnit {
+    public var milliseconds: TimeUnit {
         return .millisecond(TimeInterval(self))
     }
 }
 
-public extension Int16 {
-    var seconds: TimeUnit {
+extension Int16 {
+    public var seconds: TimeUnit {
         return .second(TimeInterval(self))
     }
-    var milliseconds: TimeUnit {
+    public var milliseconds: TimeUnit {
         return .millisecond(TimeInterval(self))
     }
 }
 
-public extension Int32 {
-    var seconds: TimeUnit {
+extension Int32 {
+    public var seconds: TimeUnit {
         return .second(TimeInterval(self))
     }
-    var milliseconds: TimeUnit {
+    public var milliseconds: TimeUnit {
         return .millisecond(TimeInterval(self))
     }
 }
 
-public extension Int64 {
-    var seconds: TimeUnit {
+extension Int64 {
+    public var seconds: TimeUnit {
         return .second(TimeInterval(self))
     }
-    var milliseconds: TimeUnit {
+    public var milliseconds: TimeUnit {
         return .millisecond(TimeInterval(self))
     }
 }
 
-public extension UInt {
-    var seconds: TimeUnit {
+extension UInt {
+    public var seconds: TimeUnit {
         return .second(TimeInterval(self))
     }
-    var milliseconds: TimeUnit {
+    public var milliseconds: TimeUnit {
         return .millisecond(TimeInterval(self))
     }
 }
 
-public extension UInt16 {
-    var seconds: TimeUnit {
+extension UInt16 {
+    public var seconds: TimeUnit {
         return .second(TimeInterval(self))
     }
-    var milliseconds: TimeUnit {
+    public var milliseconds: TimeUnit {
         return .millisecond(TimeInterval(self))
     }
 }
 
-public extension UInt32 {
-    var seconds: TimeUnit {
+extension UInt32 {
+    public var seconds: TimeUnit {
         return .second(TimeInterval(self))
     }
-    var milliseconds: TimeUnit {
+    public var milliseconds: TimeUnit {
         return .millisecond(TimeInterval(self))
     }
 }
 
-public extension UInt64 {
-    var seconds: TimeUnit {
+extension UInt64 {
+    public var seconds: TimeUnit {
         return .second(TimeInterval(self))
     }
-    var milliseconds: TimeUnit {
+    public var milliseconds: TimeUnit {
         return .millisecond(TimeInterval(self))
     }
 }
 
-public extension Float {
-    var seconds: TimeUnit {
+extension Float {
+    public var seconds: TimeUnit {
         return .second(TimeInterval(self))
     }
-    var milliseconds: TimeUnit {
+    public var milliseconds: TimeUnit {
         return .millisecond(TimeInterval(self))
     }
 }

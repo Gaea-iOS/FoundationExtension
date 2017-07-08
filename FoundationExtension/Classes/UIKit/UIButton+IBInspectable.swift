@@ -11,19 +11,19 @@
 
 import UIKit
 
-public extension UIButton {
+extension UIButton {
     
-    private struct IBDesignableVarKeys {
-        static var backgroundColorForNormal = "backgroundColorForNormal"
-        static var backgroundColorForHighlighted = "backgroundColorForHighlighted"
-        static var backgroundColorForSelected = "backgroundColorForSelected"
-        static var backgroundColorForDisabled = "backgroundColorForDisabled"
+    private struct AssociatedObject {
+        static var backgroundColorForNormal = "AssociatedObject_backgroundColorForNormal"
+        static var backgroundColorForHighlighted = "AssociatedObject_backgroundColorForHighlighted"
+        static var backgroundColorForSelected = "AssociatedObject_backgroundColorForSelected"
+        static var backgroundColorForDisabled = "AssociatedObject_backgroundColorForDisabled"
     }
     
     @IBInspectable
-    var backgroundColorForNormal: UIColor? {
+    public var backgroundColorForNormal: UIColor? {
         get {
-            return objc_getAssociatedObject(self, &IBDesignableVarKeys.backgroundColorForNormal) as? UIColor
+            return objc_getAssociatedObject(self, &AssociatedObject.backgroundColorForNormal) as? UIColor
         }
         set {
             if let color = newValue {
@@ -31,14 +31,14 @@ public extension UIButton {
             } else {
                 setBackgroundImage(nil, for: .normal)
             }
-            objc_setAssociatedObject(self, &IBDesignableVarKeys.backgroundColorForNormal, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &AssociatedObject.backgroundColorForNormal, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
     
     @IBInspectable
-    var backgroundColorForHighlighted: UIColor? {
+    public var backgroundColorForHighlighted: UIColor? {
         get {
-            return objc_getAssociatedObject(self, &IBDesignableVarKeys.backgroundColorForHighlighted) as? UIColor
+            return objc_getAssociatedObject(self, &AssociatedObject.backgroundColorForHighlighted) as? UIColor
         }
         set {
             if let color = newValue {
@@ -46,14 +46,14 @@ public extension UIButton {
             } else {
                 setBackgroundImage(nil, for: .highlighted)
             }
-            objc_setAssociatedObject(self, &IBDesignableVarKeys.backgroundColorForHighlighted, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &AssociatedObject.backgroundColorForHighlighted, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
     
     @IBInspectable
-    var backgroundColorForSelected: UIColor? {
+    public var backgroundColorForSelected: UIColor? {
         get {
-            return objc_getAssociatedObject(self, &IBDesignableVarKeys.backgroundColorForSelected) as? UIColor
+            return objc_getAssociatedObject(self, &AssociatedObject.backgroundColorForSelected) as? UIColor
         }
         set {
             if let color = newValue {
@@ -61,14 +61,14 @@ public extension UIButton {
             } else {
                 setBackgroundImage(nil, for: .selected)
             }
-            objc_setAssociatedObject(self, &IBDesignableVarKeys.backgroundColorForSelected, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &AssociatedObject.backgroundColorForSelected, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
     
     @IBInspectable
-    var backgroundColorForDisabled: UIColor? {
+    public var backgroundColorForDisabled: UIColor? {
         get {
-            return objc_getAssociatedObject(self, &IBDesignableVarKeys.backgroundColorForDisabled) as? UIColor
+            return objc_getAssociatedObject(self, &AssociatedObject.backgroundColorForDisabled) as? UIColor
         }
         set {
             if let color = newValue {
@@ -76,7 +76,7 @@ public extension UIButton {
             } else {
                 setBackgroundImage(nil, for: .disabled)
             }
-            objc_setAssociatedObject(self, &IBDesignableVarKeys.backgroundColorForDisabled, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &AssociatedObject.backgroundColorForDisabled, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
 }

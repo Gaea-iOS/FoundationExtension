@@ -10,14 +10,14 @@ import Foundation
 
 private let dateFormatter = DateFormatter()
 
-public extension Date {
+extension Date {
     
-    func toString(by formate: String) -> String {
+    public func toString(by formate: String) -> String {
         dateFormatter.dateFormat = formate
         return dateFormatter.string(from: self)
     }
     
-    var timeIntervalInMillisecondSince1970: Int64 {
+    public var timeIntervalInMillisecondSince1970: Int64 {
         let timeIntervalInSecond = timeIntervalSince1970
         return Int64(timeIntervalInSecond) * 1000
     }

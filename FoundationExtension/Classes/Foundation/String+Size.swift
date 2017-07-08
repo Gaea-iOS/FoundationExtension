@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension String {
+extension String {
 
-    func size(`in` constraintedSize: CGSize, font: UIFont) -> CGSize {
+    public func size(`in` constraintedSize: CGSize, font: UIFont) -> CGSize {
         let label = UILabel(frame: CGRect(origin: .zero, size: constraintedSize))
         label.text = self
         label.numberOfLines = 0

@@ -13,14 +13,14 @@ public enum NumberFormate: String {
     case oneDecimal = "%.1f"
 }
 
-public extension Double {
-    func toString(with formate: NumberFormate) -> String {
+extension Double {
+    public func toString(with formate: NumberFormate) -> String {
         return String(format: formate.rawValue, self)
     }
 }
 
-public extension Float {
-    func toString(with formate: NumberFormate) -> String {
+extension Float {
+    public func toString(with formate: NumberFormate) -> String {
         return String(format: formate.rawValue, self)
     }
 }

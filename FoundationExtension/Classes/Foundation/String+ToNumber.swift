@@ -8,45 +8,45 @@
 
 import Foundation
 
-public extension String {
+extension String {
     
-    var intValue: Int? {
+    public var intValue: Int? {
         return Int(self)
     }
     
-    var int16Value: Int16? {
+    public var int16Value: Int16? {
         return Int16(self)
     }
     
-    var int32Value: Int32? {
+    public var int32Value: Int32? {
         return Int32(self)
     }
     
-    var int64Value: Int64? {
+    public var int64Value: Int64? {
         return Int64(self)
     }
     
-    var uintValue: UInt? {
+    public var uintValue: UInt? {
         return UInt(self)
     }
     
-    var uint16Value: UInt16? {
+    public var uint16Value: UInt16? {
         return UInt16(self)
     }
     
-    var uint32Value: UInt32? {
+    public var uint32Value: UInt32? {
         return UInt32(self)
     }
     
-    var uint64Value: UInt64? {
+    public var uint64Value: UInt64? {
         return UInt64(self)
     }
     
-    var doubleValue: Double? {
+    public var doubleValue: Double? {
         return Double(self)
     }
     
-    var floatValue: Float? {
+    public var floatValue: Float? {
         return Float(self)
     }
 }

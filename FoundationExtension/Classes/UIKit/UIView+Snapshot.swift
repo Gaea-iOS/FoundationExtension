@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    var snapshotImage: UIImage {
+    public var snapshotImage: UIImage {
         UIGraphicsBeginImageContext(bounds.size)
         defer { UIGraphicsEndImageContext() }
         
