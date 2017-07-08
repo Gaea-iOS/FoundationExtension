@@ -116,7 +116,6 @@ extension UITabBarItem {
         
         guard let swappableImageViewFrame = swappableImageView?.frame else {return}
         
-        badgeValue = nil
         markView.backgroundColor = markBackgroundColor
         markView.label.textColor = markNumberColor
         
