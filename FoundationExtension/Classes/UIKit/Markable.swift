@@ -1,5 +1,5 @@
 //
-//  UITabBarItem+MarkValue.swift
+//  Markable.swift
 //  Pods
 //
 //  Created by 王小涛 on 2017/7/8.
@@ -8,22 +8,36 @@
 
 import UIKit
 
+private struct AssociatedObjectKey {
+    static var markType = "AssociatedObjectKey_markType"
+    static var markValue = "AssociatedObjectKey_markValue"
+    static var markNumberColor = "AssociatedObjectKey_markNumberColor"
+    static var markBackgroundColor = "AssociatedObjectKey_markBackgroundColor"
+    static var markPosition = "AssociatedObjectKey_markPosition"
+    static var markView = "AssociatedObjectKey_markView"
+}
+
 public enum MarkType {
     case dot
     case number
 }
 
-extension UITabBarItem {
-    
-    private struct AssociatedObjectKey {
-        static var markType = "AssociatedObjectKey_markType"
-        static var markValue = "AssociatedObjectKey_markValue"
-        static var markNumberColor = "AssociatedObjectKey_markNumberColor"
-        static var markBackgroundColor = "AssociatedObjectKey_markBackgroundColor"
-        static var markOffset = "AssociatedObjectKey_markOffset"
-        static var markView = "AssociatedObjectKey_markView"
-    }
-    
+public enum MarkPosition {
+    case topRight(CGPoint)
+    case topLeft(CGPoint)
+}
+
+public protocol Markable {
+    var markType: MarkType {get set}
+    var markValue: String? {get set}
+    var markNumberColor: UIColor? {get set}
+    var markBackgroundColor: UIColor? {get set}
+    var markPosition: MarkPosition {get set}
+    var markAttachView: UIView? {get}
+}
+
+extension Markable {
+
     public var markType: MarkType {
         get {
             if let type = objc_getAssociatedObject(self, &AssociatedObjectKey.markType) as? MarkType {
@@ -38,12 +52,12 @@ extension UITabBarItem {
         }
     }
     
-    public var markValue: Int {
+    public var markValue: String? {
         get {
-            if let number = objc_getAssociatedObject(self, &AssociatedObjectKey.markValue) as? Int {
-                return number
+            if let value = objc_getAssociatedObject(self, &AssociatedObjectKey.markValue) as? String {
+                return value
             } else {
-                return 0
+                return nil
             }
         }
         set {
@@ -80,16 +94,16 @@ extension UITabBarItem {
         }
     }
     
-    public var markOffset: CGPoint {
+    public var markPosition: MarkPosition {
         get {
-            if let offset = objc_getAssociatedObject(self, &AssociatedObjectKey.markOffset) as? CGPoint {
-                return offset
+            if let position = objc_getAssociatedObject(self, &AssociatedObjectKey.markPosition) as? MarkPosition {
+                return position
             } else {
-                return .zero
+                return .topRight(.zero)
             }
         }
         set {
-            objc_setAssociatedObject(self, &AssociatedObjectKey.markOffset, newValue, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &AssociatedObjectKey.markPosition, newValue, .OBJC_ASSOCIATION_RETAIN)
             update()
         }
     }
@@ -100,87 +114,91 @@ extension UITabBarItem {
         } else {
             let view = MarkView()
             view.isHidden = true
-            swappableImageView?.addSubview(view)
-            swappableImageView?.bringSubview(toFront: view)
-            swappableImageView?.clipsToBounds = false
-            
+            let attachView = markAttachView
+            attachView?.addSubview(view)
+            attachView?.bringSubview(toFront: view)
+            attachView?.clipsToBounds = false
             objc_setAssociatedObject(self, &AssociatedObjectKey.markView, view, .OBJC_ASSOCIATION_RETAIN)
             return view
         }
     }
-}
-
-extension UITabBarItem {
     
     fileprivate func update() {
         
-        guard let swappableImageViewFrame = swappableImageView?.frame else {return}
+        guard let attachViewFrame = markAttachView?.frame else {return}
         
         markView.backgroundColor = markBackgroundColor
         markView.label.textColor = markNumberColor
         
-        var text: String? {
+        let text: String? = {
             switch markType {
             case .dot:
                 return nil
             case .number:
-                return String(markValue)
+                return markValue
             }
-        }
+        }()
         markView.label.text = text
         
-        var frame: CGRect {
+        let size: CGSize = {
+            
             switch markType {
             case .dot:
                 let size = CGSize(width: 8, height: 8)
-                var origin = CGPoint(x: swappableImageViewFrame.width + 2, y: -2)
-                origin.x += markOffset.x
-                origin.y += markOffset.y
-                return CGRect(origin: origin, size: size)
+                return size
             case .number:
                 let height: CGFloat = 14
                 var size = markView.label.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: height))
                 size.width += 6
                 size.width = max(size.width, height)
                 size.height = height
-                var origin = CGPoint(x: swappableImageViewFrame.width - size.width / 2 + 2, y: -2)
-                origin.x += markOffset.x
-                origin.y += markOffset.y
-                return CGRect(origin: origin, size: size)
+                return size
             }
-        }
+        }()
+        
+        let xOffset: CGFloat = 2
+        let y: CGFloat = -2
+        
+        let origin: CGPoint = {
+            switch markPosition {
+            case let .topRight(offset):
+                switch markType {
+                case .dot:
+                    var origin = CGPoint(x: attachViewFrame.width + xOffset, y: y)
+                    origin.x += offset.x
+                    origin.y += offset.y
+                    return origin
+                case .number:
+                    var origin = CGPoint(x: attachViewFrame.width - size.width / 2 + xOffset, y: y)
+                    origin.x += offset.x
+                    origin.y += offset.y
+                    return origin
+                }
+                
+            case let .topLeft(offset):
+                switch markType {
+                case .dot:
+                    var origin = CGPoint(x: -size.width - xOffset, y: y)
+                    origin.x += offset.x
+                    origin.y += offset.y
+                    return origin
+                case .number:
+                    var origin = CGPoint(x: -(size.width / 2) - xOffset, y: y)
+                    origin.x += offset.x
+                    origin.y += offset.y
+                    return origin
+                }
+            }
+        }()
+        
+        let frame = CGRect(origin: origin, size: size)
+        
         markView.frame = frame
         markView.layer.cornerRadius = frame.size.height / 2
         
-        markView.isHidden = markValue > 0 ? false : true
+        markView.isHidden = (markValue == nil ? true : false)
     }
-}
 
-extension UITabBarItem {
-    
-    fileprivate var swappableImageView: UIView? {
-        return findFirstSubview(withClassName: "UITabBarSwappableImageView")
-    }
-    
-    private func findFirstSubview(withClassName className: String) -> UIView? {
-        let subviews = self.subviews
-        for subview in subviews {
-            let subviewClassName = NSStringFromClass(type(of: subview))
-            if subviewClassName == className {
-                return subview
-            }
-        }
-        return nil
-    }
-    
-    private var view: UIView? {
-        return value(forKey: "view") as? UIView
-    }
-    
-    private var subviews: [UIView] {
-        let subviews: [UIView] = view.flatMap { $0.subviews } ?? []
-        return subviews
-    }
 }
 
 class MarkView: UIView {
@@ -195,12 +213,10 @@ class MarkView: UIView {
         self.addSubview(label)
         self.clipsToBounds = true
         return label
-    }()
+        }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
         label.frame = bounds
     }
 }
-
-

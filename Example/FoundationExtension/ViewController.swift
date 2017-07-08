@@ -17,11 +17,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tabBarItem.markType = .number
-        tabBarItem.markValue = 558
+        tabBarItem.markValue = "558"
+        tabBarItem.markPosition = .topLeft(.zero)
 //        tabBarItem.badgeValue = "558"
         
         barButtomItem?.markType = .dot
-        barButtomItem?.markValue = 6
+        barButtomItem?.markValue = "6"
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,9 +30,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func clickType1(sender: UIButton) {
+    @IBAction func clickType1( sender: UIButton) {
+        var sender = sender
         tabBarItem.markType = .dot
-        sender.markValue = 5
+        sender.markValue = "5"
     }
     
     @IBAction func clickType2(sender: Any) {
@@ -39,11 +41,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clickNumber1(sender: Any) {
-        tabBarItem.markValue = 558
+        tabBarItem.markPosition = .topRight(.zero)
     }
     
     @IBAction func clickNumber2(sender: Any) {
-        tabBarItem.markValue = 0
+        tabBarItem.markPosition = .topLeft(.zero)
     }
     
     @IBAction func clickColor1(sender: Any) {

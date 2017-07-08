@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		1036FE6564AF5BCEDD2763CEDE2C2C95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		16A2ADF7E163A146E031863C86F684B4 /* Pods-FoundationExtension_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09EEDE52707DCA1CC71C22FDD757DC5B /* Pods-FoundationExtension_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1B458F131F10CA74008048F9 /* UIBarButtonItem+MarkValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B458F121F10CA74008048F9 /* UIBarButtonItem+MarkValue.swift */; };
+		1B458F131F10CA74008048F9 /* UIBarButtonItem+Markable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B458F121F10CA74008048F9 /* UIBarButtonItem+Markable.swift */; };
+		1B458F151F10D3DF008048F9 /* Markable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B458F141F10D3DF008048F9 /* Markable.swift */; };
 		1BA2031B1F0F949200D45208 /* NSAttributedString+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203151F0F949200D45208 /* NSAttributedString+Size.swift */; };
 		1BA2031C1F0F949200D45208 /* Number+TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203161F0F949200D45208 /* Number+TimeUnit.swift */; };
 		1BA2031D1F0F949200D45208 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203171F0F949200D45208 /* String+Size.swift */; };
@@ -28,8 +29,8 @@
 		1BA2033E1F0FE42B00D45208 /* NSAttributedString+Convinent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2033D1F0FE42B00D45208 /* NSAttributedString+Convinent.swift */; };
 		1BA203401F0FE4B100D45208 /* UIImage+FromColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2033F1F0FE4B100D45208 /* UIImage+FromColor.swift */; };
 		1BA203441F0FEDAF00D45208 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203431F0FEDAF00D45208 /* UIView+Snapshot.swift */; };
-		1BA2035A1F10AAC700D45208 /* UITabBarItem+MarkValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203591F10AAC700D45208 /* UITabBarItem+MarkValue.swift */; };
-		1BA2035C1F10AC2B00D45208 /* UIButton+MarkValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2035B1F10AC2B00D45208 /* UIButton+MarkValue.swift */; };
+		1BA2035A1F10AAC700D45208 /* UITabBarItem+Markable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA203591F10AAC700D45208 /* UITabBarItem+Markable.swift */; };
+		1BA2035C1F10AC2B00D45208 /* UIButton+Markable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2035B1F10AC2B00D45208 /* UIButton+Markable.swift */; };
 		3A1B968C3BFA604BBE40C2B569BBC248 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		3F3E391953EDECE196A443B9068D786F /* Pods-FoundationExtension_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63553B3CAB48D6014B8C8CA23F331F4B /* Pods-FoundationExtension_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		408D2843FD0BA512EE9985F57AF5A32D /* Pods-FoundationExtension_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DD45E3AF318C764475E91EAF8AF6D /* Pods-FoundationExtension_Example-dummy.m */; };
@@ -52,7 +53,8 @@
 /* Begin PBXFileReference section */
 		09EEDE52707DCA1CC71C22FDD757DC5B /* Pods-FoundationExtension_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FoundationExtension_Tests-umbrella.h"; sourceTree = "<group>"; };
 		196C3934FD0CAB1D0C91E97B9B292941 /* Pods-FoundationExtension_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FoundationExtension_Example-frameworks.sh"; sourceTree = "<group>"; };
-		1B458F121F10CA74008048F9 /* UIBarButtonItem+MarkValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+MarkValue.swift"; sourceTree = "<group>"; };
+		1B458F121F10CA74008048F9 /* UIBarButtonItem+Markable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Markable.swift"; sourceTree = "<group>"; };
+		1B458F141F10D3DF008048F9 /* Markable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markable.swift; sourceTree = "<group>"; };
 		1BA203151F0F949200D45208 /* NSAttributedString+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Size.swift"; sourceTree = "<group>"; };
 		1BA203161F0F949200D45208 /* Number+TimeUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+TimeUnit.swift"; sourceTree = "<group>"; };
 		1BA203171F0F949200D45208 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
@@ -71,8 +73,8 @@
 		1BA2033D1F0FE42B00D45208 /* NSAttributedString+Convinent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Convinent.swift"; sourceTree = "<group>"; };
 		1BA2033F1F0FE4B100D45208 /* UIImage+FromColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FromColor.swift"; sourceTree = "<group>"; };
 		1BA203431F0FEDAF00D45208 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
-		1BA203591F10AAC700D45208 /* UITabBarItem+MarkValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+MarkValue.swift"; sourceTree = "<group>"; };
-		1BA2035B1F10AC2B00D45208 /* UIButton+MarkValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+MarkValue.swift"; sourceTree = "<group>"; };
+		1BA203591F10AAC700D45208 /* UITabBarItem+Markable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Markable.swift"; sourceTree = "<group>"; };
+		1BA2035B1F10AC2B00D45208 /* UIButton+Markable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Markable.swift"; sourceTree = "<group>"; };
 		1F876EC75FF5FD48ADB9A9A3FE556CBC /* Pods-FoundationExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoundationExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		24A122C24B2E3FB0E20776CEC063E9EF /* FoundationExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FoundationExtension-dummy.m"; sourceTree = "<group>"; };
 		2A15BAC876DC164FBC48B0348EB96320 /* Pods-FoundationExtension_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FoundationExtension_Example.modulemap"; sourceTree = "<group>"; };
@@ -167,9 +169,10 @@
 				1BA2032C1F0F96DB00D45208 /* UIView+IBDesignable.swift */,
 				1BA2032E1F0F974C00D45208 /* UIButton+IBInspectable.swift */,
 				1BA203431F0FEDAF00D45208 /* UIView+Snapshot.swift */,
-				1BA203591F10AAC700D45208 /* UITabBarItem+MarkValue.swift */,
-				1BA2035B1F10AC2B00D45208 /* UIButton+MarkValue.swift */,
-				1B458F121F10CA74008048F9 /* UIBarButtonItem+MarkValue.swift */,
+				1BA203591F10AAC700D45208 /* UITabBarItem+Markable.swift */,
+				1BA2035B1F10AC2B00D45208 /* UIButton+Markable.swift */,
+				1B458F121F10CA74008048F9 /* UIBarButtonItem+Markable.swift */,
+				1B458F141F10D3DF008048F9 /* Markable.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -426,20 +429,21 @@
 				1BA2031F1F0F949200D45208 /* UIView+Parent.swift in Sources */,
 				1BA2032B1F0F968A00D45208 /* alert.swift in Sources */,
 				1BA203271F0F960600D45208 /* UIPickerView+Separator.swift in Sources */,
-				1B458F131F10CA74008048F9 /* UIBarButtonItem+MarkValue.swift in Sources */,
+				1B458F131F10CA74008048F9 /* UIBarButtonItem+Markable.swift in Sources */,
 				1BA2033C1F0FE42500D45208 /* ImageTextAttachment.swift in Sources */,
 				1BA2031E1F0F949200D45208 /* String+ToNumber.swift in Sources */,
+				1B458F151F10D3DF008048F9 /* Markable.swift in Sources */,
 				1BA2032F1F0F974C00D45208 /* UIButton+IBInspectable.swift in Sources */,
 				1BA203441F0FEDAF00D45208 /* UIView+Snapshot.swift in Sources */,
 				1BA203291F0F964500D45208 /* delay.swift in Sources */,
-				1BA2035A1F10AAC700D45208 /* UITabBarItem+MarkValue.swift in Sources */,
+				1BA2035A1F10AAC700D45208 /* UITabBarItem+Markable.swift in Sources */,
 				1BA2031B1F0F949200D45208 /* NSAttributedString+Size.swift in Sources */,
 				1BA2031D1F0F949200D45208 /* String+Size.swift in Sources */,
 				1BA203211F0F94E600D45208 /* SeparatorTableViewCell.swift in Sources */,
 				1BA2031C1F0F949200D45208 /* Number+TimeUnit.swift in Sources */,
 				1BA2032D1F0F96DB00D45208 /* UIView+IBDesignable.swift in Sources */,
 				1BA203251F0F95A000D45208 /* Number+ToString.swift in Sources */,
-				1BA2035C1F10AC2B00D45208 /* UIButton+MarkValue.swift in Sources */,
+				1BA2035C1F10AC2B00D45208 /* UIButton+Markable.swift in Sources */,
 				1BA203401F0FE4B100D45208 /* UIImage+FromColor.swift in Sources */,
 				1BA2033E1F0FE42B00D45208 /* NSAttributedString+Convinent.swift in Sources */,
 				C949AC774F92D77582825D2FCEE31377 /* FoundationExtension-dummy.m in Sources */,
