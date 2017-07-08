@@ -156,6 +156,8 @@ extension Markable {
             }
         }()
         
+        let numberAdjugeOffset = CGPoint(x: 2, y: 2)
+        
         let origin: CGPoint = {
             switch markPosition {
             case let .topRight(offset):
@@ -166,7 +168,8 @@ extension Markable {
                     origin.y += offset.y
                     return origin
                 case .number:
-                    var origin = CGPoint(x: attachViewFrame.width - size.width / 2, y: -(size.height / 2))
+                    var origin = CGPoint(x: attachViewFrame.width - size.width / 2 + numberAdjugeOffset.x,
+                                         y: -(size.height / 2) + numberAdjugeOffset.y)
                     origin.x += offset.x
                     origin.y += offset.y
                     return origin
@@ -180,7 +183,8 @@ extension Markable {
                     origin.y += offset.y
                     return origin
                 case .number:
-                    var origin = CGPoint(x: -(size.width / 2), y:  -(size.height / 2))
+                    var origin = CGPoint(x: -(size.width / 2) - numberAdjugeOffset.x,
+                                         y:  -(size.height / 2) + numberAdjugeOffset.y)
                     origin.x += offset.x
                     origin.y += offset.y
                     return origin

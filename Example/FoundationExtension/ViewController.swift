@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tabBarItem.markType = .number
-        tabBarItem.markValue = "558"
+        tabBarItem.markValue = "5"
         tabBarItem.markPosition = .topLeft(.zero)
 //        tabBarItem.badgeValue = "558"
         
