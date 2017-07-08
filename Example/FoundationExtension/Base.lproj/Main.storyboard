@@ -64,7 +64,6 @@
                                 <state key="normal" title="number"/>
                                 <connections>
                                     <action selector="clickNumber1WithSender:" destination="pBP-Q0-xRS" eventType="touchUpInside" id="o4P-Ld-UCi"/>
-                                    <segue destination="Uym-Cn-DZn" kind="show" id="dsA-G4-D82"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dao-0c-N6r">

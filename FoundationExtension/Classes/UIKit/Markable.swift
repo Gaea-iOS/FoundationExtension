@@ -156,20 +156,17 @@ extension Markable {
             }
         }()
         
-        let xOffset: CGFloat = 2
-        let y: CGFloat = -2
-        
         let origin: CGPoint = {
             switch markPosition {
             case let .topRight(offset):
                 switch markType {
                 case .dot:
-                    var origin = CGPoint(x: attachViewFrame.width + xOffset, y: y)
+                    var origin = CGPoint(x: attachViewFrame.width, y: -(size.height / 2))
                     origin.x += offset.x
                     origin.y += offset.y
                     return origin
                 case .number:
-                    var origin = CGPoint(x: attachViewFrame.width - size.width / 2 + xOffset, y: y)
+                    var origin = CGPoint(x: attachViewFrame.width - size.width / 2, y: -(size.height / 2))
                     origin.x += offset.x
                     origin.y += offset.y
                     return origin
@@ -178,12 +175,12 @@ extension Markable {
             case let .topLeft(offset):
                 switch markType {
                 case .dot:
-                    var origin = CGPoint(x: -size.width - xOffset, y: y)
+                    var origin = CGPoint(x: -size.width, y: -(size.height / 2))
                     origin.x += offset.x
                     origin.y += offset.y
                     return origin
                 case .number:
-                    var origin = CGPoint(x: -(size.width / 2) - xOffset, y: y)
+                    var origin = CGPoint(x: -(size.width / 2), y:  -(size.height / 2))
                     origin.x += offset.x
                     origin.y += offset.y
                     return origin
