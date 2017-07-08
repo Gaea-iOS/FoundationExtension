@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tabBarItem.markType = .number
-        tabBarItem.markValue = "5"
-        tabBarItem.markPosition = .topLeft(.zero)
+        tabBarItem.markValue = "56"
+        
 //        tabBarItem.badgeValue = "558"
         
         barButtomItem?.markType = .dot
@@ -50,10 +50,12 @@ class ViewController: UIViewController {
     
     @IBAction func clickColor1(sender: Any) {
         tabBarItem.markBackgroundColor = .cyan
+        tabBarItem.markNumberColor = .red
     }
     
     @IBAction func clickColor2(sender: Any) {
         tabBarItem.markBackgroundColor = .red
+        tabBarItem.markNumberColor = .cyan
     }
 }
 
