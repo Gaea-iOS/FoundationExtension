@@ -21,4 +21,28 @@ extension Date {
         let timeIntervalInSecond = timeIntervalSince1970
         return Int64(timeIntervalInSecond) * 1000
     }
+    
+    var prettyString: String {
+        let seconds = Int64(timeIntervalSinceNow)
+        let subfix = seconds < 0 ? "前" : "后"
+        if abs(seconds) < 60 {
+            return "刚刚"
+        } else if abs(seconds) < 60 * 60 {
+            let minites = seconds / 60
+            return "\(abs(minites))分钟" + subfix
+        } else if abs(seconds) < 60 * 60 * 24 {
+            let hours = seconds / (60 * 60)
+            return "\(abs(hours))小时" + subfix
+        } else {
+            if seconds < 0 && fx.isYesterday {
+                return toString(by: "昨天 HH:mm")
+            } else if seconds > 0 && fx.isTomorrow {
+                return toString(by: "明天 HH:mm")
+            } else if fx.isThisYear {
+                return toString(by: "MM月dd日 HH:mm")
+            } else {
+                return toString(by: "yyyy年MM月dd日")
+            }
+        }
+    }
 }

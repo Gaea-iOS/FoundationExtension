@@ -37,6 +37,7 @@ public extension Timer {
         return Timer(timeInterval: timeInterval, target: proxy, selector: #selector(WeakTimerProxy.timerDidfire(timer:)), userInfo: userInfo, repeats: repeats)
     }
 
+    @discardableResult
     static func after(interval: TimeInterval, target: AnyObject, block: @escaping (Timer) -> Void) -> Timer {
         
         let timer = Timer.with(timeInterval: interval, target: target, block: block, userInfo: nil, repeats: false)
@@ -44,6 +45,7 @@ public extension Timer {
         return timer
     }
     
+    @discardableResult
     static func every(interval: TimeInterval, target: AnyObject, block: @escaping (Timer) -> Void) -> Timer {
         
         let timer = Timer.with(timeInterval: interval, target: target, block: block, userInfo: nil, repeats: true)
