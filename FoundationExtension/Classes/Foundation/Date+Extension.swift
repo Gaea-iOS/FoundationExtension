@@ -168,6 +168,22 @@ extension Date {
 }
 
 extension Date {
+
+    public func changed(year: Int? = nil, month: Int? = nil, day: Int? = nil, hour: Int? = nil, minute: Int? = nil, second: Int? = nil, nanosecond: Int? = nil) -> Date? {
+        var dateComponents = self.dateComponents
+        dateComponents.year = year ?? self.year
+        dateComponents.month = month ?? self.month
+        dateComponents.day = day ?? self.day
+        dateComponents.hour = hour ?? self.hour
+        dateComponents.minute = minute ?? self.minute
+        dateComponents.second = second ?? self.second
+        dateComponents.nanosecond = nanosecond ?? self.nanosecond
+        
+        return calendar.date(from: dateComponents)
+    }
+}
+
+extension Date {
     
     public static func days(inYear year: Int, month: Int) -> Int {
         
