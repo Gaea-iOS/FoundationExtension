@@ -15,7 +15,7 @@ fileprivate struct TimeStamp {
     static let secondsInWeek: TimeInterval = 7 * secondsInDay
 }
 
-extension FoundationExtension where Base == Date {
+extension Date {
     
     private var allComponents: Set<Calendar.Component> {
         return [
@@ -28,7 +28,7 @@ extension FoundationExtension where Base == Date {
     }
     
     fileprivate var dateComponents: DateComponents {
-        return calendar.dateComponents(allComponents, from: base)
+        return calendar.dateComponents(allComponents, from: self)
     }
     
     private init(era: Int?, year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int, on calendar: Calendar) {
@@ -43,7 +43,7 @@ extension FoundationExtension where Base == Date {
         dateComponents.second = second
         dateComponents.nanosecond = nanosecond
         let date = calendar.date(from: dateComponents)!
-        base = Date(timeInterval: 0, since: date)
+        self = Date(timeInterval: 0, since: date)
     }
     
     public init(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int = 0) {
@@ -55,7 +55,7 @@ extension FoundationExtension where Base == Date {
     }
 }
 
-extension FoundationExtension where Base == Date {
+extension Date {
     
     public var year: Int {
         return dateComponents.year!
@@ -99,22 +99,22 @@ extension FoundationExtension where Base == Date {
 }
 
 
-extension FoundationExtension where Base == Date {
+extension Date {
     
     public var isToday: Bool {
-        return calendar.isDateInToday(base)
+        return calendar.isDateInToday(self)
     }
     
     public var isYesterday: Bool {
-        return calendar.isDateInYesterday(base)
+        return calendar.isDateInYesterday(self)
     }
     
     public var isTomorrow: Bool {
-        return calendar.isDateInTomorrow(base)
+        return calendar.isDateInTomorrow(self)
     }
     
     public var isWeekend: Bool {
-        return calendar.isDateInWeekend(base)
+        return calendar.isDateInWeekend(self)
     }
     
     public var isThisMonth: Bool {
@@ -126,48 +126,48 @@ extension FoundationExtension where Base == Date {
     }
     
     public var start: Date {
-        return calendar.startOfDay(for: base)
+        return calendar.startOfDay(for: self)
     }
 }
 
-extension FoundationExtension where Base == Date {
+extension Date {
     
     func isInSameYearAs(_ date: Date) -> Bool {
-        return calendar.compare(base, to: date, toGranularity: .year) == .orderedSame
+        return calendar.compare(self, to: date, toGranularity: .year) == .orderedSame
     }
     
     func isInSameMonthAs(_ date: Date) -> Bool {
-        return calendar.compare(base, to: date, toGranularity: .month) == .orderedSame
+        return calendar.compare(self, to: date, toGranularity: .month) == .orderedSame
     }
     
     func isInSameDayAs(_ date: Date) -> Bool {
-        return calendar.compare(base, to: date, toGranularity: .day) == .orderedSame
+        return calendar.compare(self, to: date, toGranularity: .day) == .orderedSame
         // return calendar.isDate(base, inSameDayAs: date)
     }
     
     func isAfterDateIgnoringTime(date: Date) -> Bool {
-        return calendar.compare(base, to: date, toGranularity: .day) == .orderedDescending
+        return calendar.compare(self, to: date, toGranularity: .day) == .orderedDescending
     }
     
     func isBeforeDateIgoringTime(date: Date) -> Bool {
-        return calendar.compare(base, to: date, toGranularity: .day) == .orderedAscending
+        return calendar.compare(self, to: date, toGranularity: .day) == .orderedAscending
     }
 }
 
-extension FoundationExtension where Base == Date {
+extension Date {
     
     func days(toDate date: Date) -> Int {
-        let components = calendar.dateComponents([.day], from: base, to: date)
+        let components = calendar.dateComponents([.day], from: self, to: date)
         return components.day ?? 0
     }
     
     func days(fromDate date: Date) -> Int {
-        let components = calendar.dateComponents([.day], from: date, to: base)
+        let components = calendar.dateComponents([.day], from: date, to: self)
         return components.day ?? 0
     }
 }
 
-extension FoundationExtension where Base == Date {
+extension Date {
     
     public static func days(inYear year: Int, month: Int) -> Int {
         

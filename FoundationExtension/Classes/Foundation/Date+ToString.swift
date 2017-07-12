@@ -35,14 +35,14 @@ extension Date {
             let hours = seconds / (60 * 60)
             return "\(abs(hours))小时" + subfix
         } else {
-            if seconds < 0 && fx.isYesterday {
+            if seconds < 0 && isYesterday {
                 return toString(by: "昨天 HH:mm")
-            } else if seconds > 0 && fx.isTomorrow {
+            } else if seconds > 0 && isTomorrow {
                 return toString(by: "明天 HH:mm")
-            } else if abs(fx.days(toDate: today)) < 4  {
-                let n = abs(fx.days(toDate: today))
+            } else if abs(days(toDate: today)) < 4  {
+                let n = abs(days(toDate: today))
                 return toString(by: "\(n)天\(subfix) HH:mm")
-            } else if fx.isThisYear {
+            } else if isThisYear {
                 return toString(by: "MM月dd日 HH:mm")
             } else {
                 return toString(by: "yyyy年MM月dd日")

@@ -29,93 +29,93 @@ extension TimeStampUnit {
     }
 }
 
-extension FoundationExtension where Base == TimeInterval {
+extension TimeInterval {
     public var seconds: TimeStampUnit {
-        return .second(base)
+        return .second(self)
     }
     public var milliseconds: TimeStampUnit {
-        return .millisecond(base)
+        return .millisecond(self)
     }
 }
 
-extension FoundationExtension where Base == Float {
+extension Float {
     public var seconds: TimeStampUnit {
-        return .second(TimeInterval(base))
+        return .second(TimeInterval(self))
     }
     public var milliseconds: TimeStampUnit {
-        return .millisecond(TimeInterval(base))
+        return .millisecond(TimeInterval(self))
     }
 }
 
-extension FoundationExtension where Base == Int {
+extension Int {
     public var seconds: TimeStampUnit {
-        return .second(TimeInterval(base))
+        return .second(TimeInterval(self))
     }
     public var milliseconds: TimeStampUnit {
-        return .millisecond(TimeInterval(base))
+        return .millisecond(TimeInterval(self))
     }
 }
 
-extension FoundationExtension where Base == Int16 {
+extension Int16 {
     public var seconds: TimeStampUnit {
-        return .second(TimeInterval(base))
+        return .second(TimeInterval(self))
     }
     public var milliseconds: TimeStampUnit {
-        return .millisecond(TimeInterval(base))
+        return .millisecond(TimeInterval(self))
     }
 }
 
-extension FoundationExtension where Base == Int32 {
+extension Int32 {
     public var seconds: TimeStampUnit {
-        return .second(TimeInterval(base))
+        return .second(TimeInterval(self))
     }
     public var milliseconds: TimeStampUnit {
-        return .millisecond(TimeInterval(base))
+        return .millisecond(TimeInterval(self))
     }
 }
 
-extension FoundationExtension where Base == Int64 {
+extension Int64 {
     public var seconds: TimeStampUnit {
-        return .second(TimeInterval(base))
+        return .second(TimeInterval(self))
     }
     public var milliseconds: TimeStampUnit {
-        return .millisecond(TimeInterval(base))
+        return .millisecond(TimeInterval(self))
     }
 }
 
-extension FoundationExtension where Base == UInt {
+extension UInt {
     public var seconds: TimeStampUnit {
-        return .second(TimeInterval(base))
+        return .second(TimeInterval(self))
     }
     public var milliseconds: TimeStampUnit {
-        return .millisecond(TimeInterval(base))
+        return .millisecond(TimeInterval(self))
     }
 }
 
-extension FoundationExtension where Base == UInt16 {
+extension UInt16 {
     public var seconds: TimeStampUnit {
-        return .second(TimeInterval(base))
+        return .second(TimeInterval(self))
     }
     public var milliseconds: TimeStampUnit {
-        return .millisecond(TimeInterval(base))
+        return .millisecond(TimeInterval(self))
     }
 }
 
-extension FoundationExtension where Base == UInt32 {
+extension UInt32 {
     public var seconds: TimeStampUnit {
-        return .second(TimeInterval(base))
+        return .second(TimeInterval(self))
     }
     public var milliseconds: TimeStampUnit {
-        return .millisecond(TimeInterval(base))
+        return .millisecond(TimeInterval(self))
     }
 }
 
-extension FoundationExtension where Base == UInt64 {
+extension UInt64 {
     public var seconds: TimeStampUnit {
-        return .second(TimeInterval(base))
+        return .second(TimeInterval(self))
     }
     public var milliseconds: TimeStampUnit {
-        return .millisecond(TimeInterval(base))
+        return .millisecond(TimeInterval(self))
     }
 }
 
