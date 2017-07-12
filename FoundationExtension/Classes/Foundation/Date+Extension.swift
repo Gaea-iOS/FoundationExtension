@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TimeStamp {
+fileprivate struct TimeStamp {
     static let secondInMinute: TimeInterval = 60
     static let secondsInHour: TimeInterval = 60 * secondInMinute
     static let secondsInDay: TimeInterval = 24 * secondsInHour
@@ -31,7 +31,7 @@ extension FoundationExtension where Base == Date {
         return calendar.dateComponents(allComponents, from: base)
     }
     
-    public init(era: Int?, year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int, on calendar: Calendar) {
+    private init(era: Int?, year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int, on calendar: Calendar) {
         let now = Date()
         var dateComponents = calendar.dateComponents([.era, .year, .month, .day, .hour, .minute, .second, .nanosecond], from: now)
         dateComponents.era = era
@@ -46,17 +46,17 @@ extension FoundationExtension where Base == Date {
         base = Date(timeInterval: 0, since: date)
     }
     
-        public init(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int = 0) {
-            self.init(era: nil, year: year, month: month, day: day, hour: hour, minute: minute, second: second, nanosecond: nanosecond, on: .current)
-        }
-
-        public init(year: Int, month: Int, day: Int) {
-            self.init(year: year, month: month, day: day, hour: 0, minute: 0, second: 0)
-        }
+    public init(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int = 0) {
+        self.init(era: nil, year: year, month: month, day: day, hour: hour, minute: minute, second: second, nanosecond: nanosecond, on: .current)
+    }
+    
+    public init(year: Int, month: Int, day: Int) {
+        self.init(year: year, month: month, day: day, hour: 0, minute: 0, second: 0)
+    }
 }
 
 extension FoundationExtension where Base == Date {
-
+    
     public var year: Int {
         return dateComponents.year!
     }
@@ -100,7 +100,7 @@ extension FoundationExtension where Base == Date {
 
 
 extension FoundationExtension where Base == Date {
-        
+    
     public var isToday: Bool {
         return calendar.isDateInToday(base)
     }
@@ -118,8 +118,7 @@ extension FoundationExtension where Base == Date {
     }
     
     public var isThisMonth: Bool {
-        let now = Date()
-        return year == now.fx.year && month == now.fx.month
+        return isInSameMonthAs(Date())
     }
     
     public var isThisYear: Bool {
@@ -132,25 +131,26 @@ extension FoundationExtension where Base == Date {
 }
 
 extension FoundationExtension where Base == Date {
-
+    
     func isInSameYearAs(_ date: Date) -> Bool {
-        return year == date.fx.year
+        return calendar.compare(base, to: date, toGranularity: .year) == .orderedSame
     }
     
     func isInSameMonthAs(_ date: Date) -> Bool {
-        return year == date.fx.year && month == date.fx.month
+        return calendar.compare(base, to: date, toGranularity: .month) == .orderedSame
+    }
+    
+    func isInSameDayAs(_ date: Date) -> Bool {
+        return calendar.compare(base, to: date, toGranularity: .day) == .orderedSame
+        // return calendar.isDate(base, inSameDayAs: date)
     }
     
     func isAfterDateIgnoringTime(date: Date) -> Bool {
-        return (year > date.fx.year)
-            || (year == date.fx.year && month > date.fx.month)
-            || (year == date.fx.year && month == date.fx.month && day > date.fx.day)
+        return calendar.compare(base, to: date, toGranularity: .day) == .orderedDescending
     }
     
     func isBeforeDateIgoringTime(date: Date) -> Bool {
-        return (year < date.fx.year)
-            || (year == date.fx.year && month < date.fx.month)
-            || (year == date.fx.year && month == date.fx.month && day < date.fx.day)
+        return calendar.compare(base, to: date, toGranularity: .day) == .orderedAscending
     }
 }
 
@@ -169,13 +169,6 @@ extension FoundationExtension where Base == Date {
 
 extension FoundationExtension where Base == Date {
     
-    public func isInSameDayAs(_ date: Date) -> Bool {
-        return calendar.isDate(base, inSameDayAs: date)
-    }
-}
-
-extension FoundationExtension where Base == Date {
-
     public static func days(inYear year: Int, month: Int) -> Int {
         
         let calendar = Calendar.current
