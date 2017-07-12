@@ -9,20 +9,48 @@
 import Foundation
 
 public struct FoundationExtension<Base> {
+    /// Base object to extend.
     public let base: Base
+    
+    /// Creates extensions with base object.
+    ///
+    /// - parameter base: Base object.
     public init(_ base: Base) {
         self.base = base
     }
 }
 
+/// A type that has FoundationExtension extensions.
 public protocol FoundationExtensionCompatible {
+    /// Extended type
     associatedtype CompatibleType
-    var fx: CompatibleType { get }
+    
+    /// FoundationExtension extensions.
+    static var fx: FoundationExtension<CompatibleType>.Type { get set }
+    
+    /// FoundationExtension extensions.
+    var fx: FoundationExtension<CompatibleType> { get set }
 }
 
-public extension FoundationExtensionCompatible {
+extension FoundationExtensionCompatible {
+    /// FoundationExtension extensions.
+    public static var fx: FoundationExtension<Self>.Type {
+        get {
+            return FoundationExtension<Self>.self
+        }
+        set {
+            // this enables using FoundationExtension to "mutate" base type
+        }
+    }
+    
+    /// FoundationExtension extensions.
     public var fx: FoundationExtension<Self> {
-        get { return FoundationExtension(self) }
+        get {
+            return FoundationExtension(self)
+        }
+        set {
+            // this enables using FoundationExtension to "mutate" base object
+        }
     }
 }
 

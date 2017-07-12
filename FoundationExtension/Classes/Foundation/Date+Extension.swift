@@ -16,108 +16,184 @@ struct TimeStamp {
 }
 
 extension FoundationExtension where Base == Date {
+    
+    private var allComponents: Set<Calendar.Component> {
+        return [
+            .era, .year, .month, .day, .hour, .minute, .second, .nanosecond, .weekday, .weekdayOrdinal, .quarter, .weekOfMonth, .weekOfYear, .yearForWeekOfYear, .calendar, .timeZone
+        ]
+    }
+    
+    fileprivate var calendar: Calendar {
+        return Calendar.current
+    }
+    
+    fileprivate var dateComponents: DateComponents {
+        return calendar.dateComponents(allComponents, from: base)
+    }
+    
+    public init(era: Int?, year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int, on calendar: Calendar) {
+        let now = Date()
+        var dateComponents = calendar.dateComponents([.era, .year, .month, .day, .hour, .minute, .second, .nanosecond], from: now)
+        dateComponents.era = era
+        dateComponents.year = year
+        dateComponents.month = month
+        dateComponents.day = day
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        dateComponents.second = second
+        dateComponents.nanosecond = nanosecond
+        let date = calendar.date(from: dateComponents)!
+        base = Date(timeInterval: 0, since: date)
+    }
+    
+        public init(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int = 0) {
+            self.init(era: nil, year: year, month: month, day: day, hour: hour, minute: minute, second: second, nanosecond: nanosecond, on: .current)
+        }
+
+        public init(year: Int, month: Int, day: Int) {
+            self.init(year: year, month: month, day: day, hour: 0, minute: 0, second: 0)
+        }
+}
+
+extension FoundationExtension where Base == Date {
+
+    public var year: Int {
+        return dateComponents.year!
+    }
+    
+    public var month: Int {
+        return dateComponents.month!
+    }
+    
+    public var day: Int {
+        return dateComponents.day!
+    }
+    
+    public var hour: Int {
+        return dateComponents.hour!
+    }
+    
+    public var minute: Int {
+        return dateComponents.minute!
+    }
+    
+    public var second: Int {
+        return dateComponents.second!
+    }
+    
+    public var nanosecond: Int {
+        return dateComponents.nanosecond!
+    }
+    
+    public var weekday: Int {
+        return dateComponents.weekday!
+    }
+    
+    public var weekOfMonth: Int {
+        return dateComponents.weekOfMonth!
+    }
+    
+    public var weekOfYear: Int {
+        return dateComponents.weekOfYear!
+    }
+}
+
+
+extension FoundationExtension where Base == Date {
         
     public var isToday: Bool {
-        return base.fx.isEqualToIgnoringTime(Date())
+        return calendar.isDateInToday(base)
     }
     
     public var isYesterday: Bool {
-        return base.fx.isEqualToIgnoringTime(Date.yesterday())
+        return calendar.isDateInYesterday(base)
     }
     
     public var isTomorrow: Bool {
-        return base.fx.isEqualToIgnoringTime(Date.tomorrow())
+        return calendar.isDateInTomorrow(base)
+    }
+    
+    public var isWeekend: Bool {
+        return calendar.isDateInWeekend(base)
     }
     
     public var isThisMonth: Bool {
-        let date = Date()
-        return base.year == date.year && base.month == date.month
+        let now = Date()
+        return year == now.fx.year && month == now.fx.month
     }
     
     public var isThisYear: Bool {
-        return base.year == Date().year
+        return isInSameYearAs(Date())
     }
     
-    public var isInFuture: Bool {
-        return base.fx.isLaterThanIgnoringTime(Date())
+    public var start: Date {
+        return calendar.startOfDay(for: base)
+    }
+}
+
+extension FoundationExtension where Base == Date {
+
+    func isInSameYearAs(_ date: Date) -> Bool {
+        return year == date.fx.year
     }
     
-    public var isInPast: Bool {
-        return base.fx.isEarlierThanIgnoringTime(Date())
+    func isInSameMonthAs(_ date: Date) -> Bool {
+        return year == date.fx.year && month == date.fx.month
     }
     
-    public var beginning: Date {
-        return Date(year: base.year, month: base.month, day: base.day)
+    func isAfterDateIgnoringTime(date: Date) -> Bool {
+        return (year > date.fx.year)
+            || (year == date.fx.year && month > date.fx.month)
+            || (year == date.fx.year && month == date.fx.month && day > date.fx.day)
     }
     
-    public var ending: Date {
-        return Date(year: base.year, month: base.month, day: base.day, hour: 23, minute: 59, second: 59)
+    func isBeforeDateIgoringTime(date: Date) -> Bool {
+        return (year < date.fx.year)
+            || (year == date.fx.year && month < date.fx.month)
+            || (year == date.fx.year && month == date.fx.month && day < date.fx.day)
     }
 }
 
 extension FoundationExtension where Base == Date {
     
-    public func isEqualToIgnoringTime(_ date: Date) -> Bool {
-        return base.year == date.year && base.month == date.month && base.day == date.day
-    }
-
-    public func isEarlierThanIgnoringTime(_ date: Date) -> Bool {
-        return base.year < date.year
-            || (base.year == date.year && base.month < date.month)
-            || (base.year == date.year && base.month == date.month && base.day < date.day)
+    func days(toDate date: Date) -> Int {
+        let components = calendar.dateComponents([.day], from: base, to: date)
+        return components.day ?? 0
     }
     
-    public func isLaterThanIgnoringTime(_ date: Date) -> Bool {
-        return base.year > date.year
-            || (base.year == date.year && base.month > date.month)
-            || (base.year == date.year && base.month == date.month && base.day > date.day)
+    func days(fromDate date: Date) -> Int {
+        let components = calendar.dateComponents([.day], from: date, to: base)
+        return components.day ?? 0
     }
 }
 
 extension FoundationExtension where Base == Date {
     
-    public func addingSeconds(_ seconds: Int) -> Date {
-        return (base + seconds.seconds)!
-    }
-    
-    public func addingMinutes(_ minutes: Int) -> Date {
-        return (base + minutes.minutes)!
-    }
-    
-    public func addingHours(_ hours: Int) -> Date {
-        return (base + hours.hours)!
-    }
-    
-    public func addingDays(_ days: Int) -> Date {
-        return (base + days.days)!
-    }
-    
-    public func addingMonths(_ months: Int) -> Date {
-        return (base + months.months)!
-    }
-    
-    public func addingYears(_ years: Int) -> Date {
-        return (base + years.years)!
+    public func isInSameDayAs(_ date: Date) -> Bool {
+        return calendar.isDate(base, inSameDayAs: date)
     }
 }
 
-func ==(lhs: Date, rhs: Date) -> Bool {
-    return lhs.timeIntervalSinceReferenceDate == rhs.timeIntervalSinceReferenceDate
-}
+extension FoundationExtension where Base == Date {
 
-func >(lhs: Date, rhs: Date) -> Bool {
-    return lhs.timeIntervalSinceReferenceDate > rhs.timeIntervalSinceReferenceDate
+    public static func days(inYear year: Int, month: Int) -> Int {
+        
+        let calendar = Calendar.current
+        
+        var startComps = DateComponents()
+        startComps.day = 1
+        startComps.month = month
+        startComps.year = year
+        
+        var endComps = DateComponents()
+        endComps.day = 1
+        endComps.month = month == 12 ? 1 : month + 1
+        endComps.year = month == 12 ? year + 1 : year
+        
+        let startDate = calendar.date(from: startComps)!
+        let endDate = calendar.date(from: endComps)!
+        
+        let diff = calendar.dateComponents([.day], from: startDate, to: endDate)
+        return diff.day!
+    }
 }
-
-func <(lhs: Date, rhs: Date) -> Bool {
-    return lhs.timeIntervalSinceReferenceDate < rhs.timeIntervalSinceReferenceDate
-}
-
-func >=(lhs: Date, rhs: Date) -> Bool {
-    return lhs.timeIntervalSinceReferenceDate >= rhs.timeIntervalSinceReferenceDate
-}
-
-func <=(lhs: Date, rhs: Date) -> Bool {
-    return lhs.timeIntervalSinceReferenceDate <= rhs.timeIntervalSinceReferenceDate
-}
-

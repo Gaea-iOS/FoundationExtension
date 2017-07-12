@@ -23,6 +23,7 @@ extension Date {
     }
     
     var prettyString: String {
+        let today = Date()
         let seconds = Int64(timeIntervalSinceNow)
         let subfix = seconds < 0 ? "前" : "后"
         if abs(seconds) < 60 {
@@ -38,6 +39,8 @@ extension Date {
                 return toString(by: "昨天 HH:mm")
             } else if seconds > 0 && fx.isTomorrow {
                 return toString(by: "明天 HH:mm")
+            } else if abs(fx.days(toDate: today)) < 4  {
+                return toString(by: "2天\(subfix) HH:mm")
             } else if fx.isThisYear {
                 return toString(by: "MM月dd日 HH:mm")
             } else {
