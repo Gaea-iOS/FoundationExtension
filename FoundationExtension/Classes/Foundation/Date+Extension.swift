@@ -132,36 +132,36 @@ extension Date {
 
 extension Date {
     
-    func isInSameYearAs(_ date: Date) -> Bool {
+    public func isInSameYearAs(_ date: Date) -> Bool {
         return calendar.compare(self, to: date, toGranularity: .year) == .orderedSame
     }
     
-    func isInSameMonthAs(_ date: Date) -> Bool {
+    public func isInSameMonthAs(_ date: Date) -> Bool {
         return calendar.compare(self, to: date, toGranularity: .month) == .orderedSame
     }
     
-    func isInSameDayAs(_ date: Date) -> Bool {
+    public func isInSameDayAs(_ date: Date) -> Bool {
         return calendar.compare(self, to: date, toGranularity: .day) == .orderedSame
         // return calendar.isDate(base, inSameDayAs: date)
     }
     
-    func isAfterDateIgnoringTime(date: Date) -> Bool {
+    public func isAfterDateIgnoringTime(date: Date) -> Bool {
         return calendar.compare(self, to: date, toGranularity: .day) == .orderedDescending
     }
     
-    func isBeforeDateIgoringTime(date: Date) -> Bool {
+    public func isBeforeDateIgoringTime(date: Date) -> Bool {
         return calendar.compare(self, to: date, toGranularity: .day) == .orderedAscending
     }
 }
 
 extension Date {
     
-    func days(toDate date: Date) -> Int {
+    public func days(toDate date: Date) -> Int {
         let components = calendar.dateComponents([.day], from: self, to: date)
         return components.day ?? 0
     }
     
-    func days(fromDate date: Date) -> Int {
+    public func days(fromDate date: Date) -> Int {
         let components = calendar.dateComponents([.day], from: date, to: self)
         return components.day ?? 0
     }
@@ -180,6 +180,21 @@ extension Date {
         dateComponents.nanosecond = nanosecond ?? self.nanosecond
         
         return calendar.date(from: dateComponents)
+    }
+}
+
+extension Date {
+        
+    public func addingDays(_ days: Int) -> Date {
+        return calendar.date(byAdding: DateComponents(day: days), to: self)!
+    }
+    
+    public func addingMonths(_ months: Int) -> Date {
+        return calendar.date(byAdding: DateComponents(month: months), to: self)!
+    }
+
+    public func addingYears(_ years: Int) -> Date {
+        return calendar.date(byAdding: DateComponents(year: years), to: self)!
     }
 }
 
