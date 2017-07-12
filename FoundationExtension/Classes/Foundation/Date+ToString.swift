@@ -40,7 +40,8 @@ extension Date {
             } else if seconds > 0 && fx.isTomorrow {
                 return toString(by: "明天 HH:mm")
             } else if abs(fx.days(toDate: today)) < 4  {
-                return toString(by: "2天\(subfix) HH:mm")
+                let n = abs(fx.days(toDate: today))
+                return toString(by: "\(n)天\(subfix) HH:mm")
             } else if fx.isThisYear {
                 return toString(by: "MM月dd日 HH:mm")
             } else {
