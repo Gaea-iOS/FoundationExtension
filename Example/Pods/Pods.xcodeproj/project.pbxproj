@@ -36,6 +36,7 @@
 		1BA2035C1F10AC2B00D45208 /* UIButton+Markable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2035B1F10AC2B00D45208 /* UIButton+Markable.swift */; };
 		1BFFFA3C1F15F75200198C22 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFFFA3B1F15F75200198C22 /* Date+Extension.swift */; };
 		1BFFFA481F15FBBE00198C22 /* NameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFFFA471F15FBBE00198C22 /* NameSpace.swift */; };
+		1BFFFA741F19EACC00198C22 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFFFA731F19EACC00198C22 /* Bundle+Extension.swift */; };
 		3A1B968C3BFA604BBE40C2B569BBC248 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		3F3E391953EDECE196A443B9068D786F /* Pods-FoundationExtension_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63553B3CAB48D6014B8C8CA23F331F4B /* Pods-FoundationExtension_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		408D2843FD0BA512EE9985F57AF5A32D /* Pods-FoundationExtension_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DD45E3AF318C764475E91EAF8AF6D /* Pods-FoundationExtension_Example-dummy.m */; };
@@ -85,6 +86,7 @@
 		1BA2035B1F10AC2B00D45208 /* UIButton+Markable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Markable.swift"; sourceTree = "<group>"; };
 		1BFFFA3B1F15F75200198C22 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		1BFFFA471F15FBBE00198C22 /* NameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameSpace.swift; sourceTree = "<group>"; };
+		1BFFFA731F19EACC00198C22 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		1F876EC75FF5FD48ADB9A9A3FE556CBC /* Pods-FoundationExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoundationExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		24A122C24B2E3FB0E20776CEC063E9EF /* FoundationExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FoundationExtension-dummy.m"; sourceTree = "<group>"; };
 		2A15BAC876DC164FBC48B0348EB96320 /* Pods-FoundationExtension_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FoundationExtension_Example.modulemap"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				1BA203321F0F97E300D45208 /* Array+Slice.swift */,
 				1BA203371F0F9CD500D45208 /* Date+ToString.swift */,
 				1BFFFA3B1F15F75200198C22 /* Date+Extension.swift */,
+				1BFFFA731F19EACC00198C22 /* Bundle+Extension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				1B458F151F10D3DF008048F9 /* Markable.swift in Sources */,
 				1BA2032F1F0F974C00D45208 /* UIButton+IBInspectable.swift in Sources */,
 				1BA203441F0FEDAF00D45208 /* UIView+Snapshot.swift in Sources */,
+				1BFFFA741F19EACC00198C22 /* Bundle+Extension.swift in Sources */,
 				1BA203291F0F964500D45208 /* delay.swift in Sources */,
 				1B458F171F10E755008048F9 /* DownCounter.swift in Sources */,
 				1BA2035A1F10AAC700D45208 /* UITabBarItem+Markable.swift in Sources */,
