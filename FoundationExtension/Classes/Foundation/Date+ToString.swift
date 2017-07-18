@@ -22,7 +22,7 @@ extension Date {
         return Int64(timeIntervalInSecond) * 1000
     }
     
-    var prettyString: String {
+    public var prettyString: String {
         let today = Date()
         let seconds = Int64(timeIntervalSinceNow)
         let subfix = seconds < 0 ? "前" : "后"
