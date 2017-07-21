@@ -27,7 +27,7 @@ public enum MarkPosition {
     case topLeft(CGPoint)
 }
 
-public protocol Markable {
+public protocol Markable: class {
     var markType: MarkType {get set}
     var markValue: String? {get set}
     var markNumberColor: UIColor? {get set}

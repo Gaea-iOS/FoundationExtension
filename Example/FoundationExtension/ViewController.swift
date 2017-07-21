@@ -16,6 +16,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        var button = UIBarButtonItem(image: UIImage(named: "QQ20170720-0")!, style: .plain, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = button
+        button.markValue = "5"
+        
         navigationController?.tabBarItem.markType = .number
         navigationController?.tabBarItem.markValue = "56"
         
@@ -23,6 +28,8 @@ class ViewController: UIViewController {
         
         barButtomItem?.markType = .dot
         barButtomItem?.markValue = "6"
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
