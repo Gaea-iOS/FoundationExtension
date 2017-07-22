@@ -37,7 +37,7 @@ public protocol Markable: class {
 }
 
 extension Markable {
-
+    
     public var markType: MarkType {
         get {
             if let type = objc_getAssociatedObject(self, &AssociatedObjectKey.markType) as? MarkType {
@@ -114,10 +114,6 @@ extension Markable {
         } else {
             let view = MarkView()
             view.isHidden = true
-            let attachView = markAttachView
-            attachView?.addSubview(view)
-            attachView?.bringSubview(toFront: view)
-            attachView?.clipsToBounds = false
             objc_setAssociatedObject(self, &AssociatedObjectKey.markView, view, .OBJC_ASSOCIATION_RETAIN)
             return view
         }
@@ -125,7 +121,13 @@ extension Markable {
     
     fileprivate func update() {
         
-        guard let attachViewFrame = markAttachView?.frame else {return}
+        guard let markAttachView = markAttachView else {return}
+        markView.removeFromSuperview()
+        markAttachView.addSubview(markView)
+        markAttachView.bringSubview(toFront: markView)
+        markAttachView.clipsToBounds = false
+        
+        let attachViewFrame = markAttachView.frame
         
         markView.backgroundColor = markBackgroundColor
         markView.label.textColor = markNumberColor
@@ -199,7 +201,7 @@ extension Markable {
         
         markView.isHidden = (markValue == nil ? true : false)
     }
-
+    
 }
 
 class MarkView: UIView {
