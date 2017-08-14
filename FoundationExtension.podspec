@@ -30,8 +30,21 @@ an extension for NSFoundation and UIKit and some utils.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'FoundationExtension/Classes/**/*'
-  
+  #s.source_files = 'FoundationExtension/Classes/**/*'
+
+    s.subspec 'Component' do |cp|
+        cp.source_files = 'FoundationExtension/Classes/Component/**/*'
+    end
+
+    s.subspec 'Foundation' do |fd|
+        fd.source_files = 'FoundationExtension/Classes/Foundation/**/*'
+    end
+
+    s.subspec 'UIKit' do |uk|
+        uk.source_files = 'FoundationExtension/Classes/UIKit/**/*'
+        uk.dependency 'UICKeyChainStore'
+    end
+
   # s.resource_bundles = {
   #   'FoundationExtension' => ['FoundationExtension/Assets/*.png']
   # }

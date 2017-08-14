@@ -1,9 +1,9 @@
 {
   "name": "FoundationExtension",
   "version": "0.1.0",
-  "summary": "A short description of FoundationExtension.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/wangxiaotao/FoundationExtension",
+  "summary": "an extension for NSFoundation and UIKit",
+  "description": "an extension for NSFoundation and UIKit and some utils.",
+  "homepage": "https://github.com/Gaea-iOS/FoundationExtension",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,30 @@
     "wangxiaotao": "445242970@qq.com"
   },
   "source": {
-    "git": "https://github.com/wangxiaotao/FoundationExtension.git",
+    "git": "https://github.com/Gaea-iOS/FoundationExtension.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "FoundationExtension/Classes/**/*"
+  "subspecs": [
+    {
+      "name": "Component",
+      "source_files": "FoundationExtension/Classes/Component/**/*"
+    },
+    {
+      "name": "Foundation",
+      "source_files": "FoundationExtension/Classes/Foundation/**/*"
+    },
+    {
+      "name": "UIKit",
+      "source_files": "FoundationExtension/Classes/UIKit/**/*",
+      "public_header_files": "FoundationExtension/Classes/UIKit/*.h",
+      "dependencies": {
+        "UICKeyChainStore": [
+
+        ]
+      }
+    }
+  ]
 }
