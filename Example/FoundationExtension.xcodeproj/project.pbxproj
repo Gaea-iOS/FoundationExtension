@@ -324,11 +324,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoundationExtension_Example/Pods-FoundationExtension_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FoundationExtension/FoundationExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/UICKeyChainStore/UICKeyChainStore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoundationExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICKeyChainStore.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

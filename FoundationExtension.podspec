@@ -52,4 +52,6 @@ an extension for NSFoundation and UIKit and some utils.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+    s.frameworks = 'CoreTelephony'
+    s.dependency 'ReachabilitySwift', '~> 3'
 end

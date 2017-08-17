@@ -1,12 +1,17 @@
 PODS:
-  - FoundationExtension (0.1.0):
-    - FoundationExtension/Component (= 0.1.0)
-    - FoundationExtension/Foundation (= 0.1.0)
-    - FoundationExtension/UIKit (= 0.1.0)
-  - FoundationExtension/Component (0.1.0)
-  - FoundationExtension/Foundation (0.1.0)
-  - FoundationExtension/UIKit (0.1.0):
+  - FoundationExtension (0.3.0):
+    - FoundationExtension/Component (= 0.3.0)
+    - FoundationExtension/Foundation (= 0.3.0)
+    - FoundationExtension/UIKit (= 0.3.0)
+    - ReachabilitySwift (~> 3)
+  - FoundationExtension/Component (0.3.0):
+    - ReachabilitySwift (~> 3)
+  - FoundationExtension/Foundation (0.3.0):
+    - ReachabilitySwift (~> 3)
+  - FoundationExtension/UIKit (0.3.0):
+    - ReachabilitySwift (~> 3)
     - UICKeyChainStore
+  - ReachabilitySwift (3)
   - UICKeyChainStore (2.1.1)
 
 DEPENDENCIES:
@@ -17,7 +22,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  FoundationExtension: f29ff4c5a892a11b8a7322e10940c66f34b3f412
+  FoundationExtension: fd6bec72a4fef7f8739e4e8fcceae09a0998945c
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   UICKeyChainStore: 239558492fa260531a0774cfc611ea83a6eaff3a
 
 PODFILE CHECKSUM: 3b5ce4af5816afa78af1b3e873f43d2bd27ba163
