@@ -9,7 +9,7 @@
 import CoreTelephony
 import ReachabilitySwift
 
-class NetworkStatus {
+public class NetworkStatus {
     
     private let reachability: Reachability?
     
