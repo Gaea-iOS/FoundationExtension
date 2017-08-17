@@ -13,11 +13,11 @@ public class NetworkStatus {
     
     private let reachability: Reachability?
     
-    public init?() {
+    public init() {
         self.reachability = Reachability()
     }
     
-    public init?(hostname: String) {
+    public init(hostname: String) {
         self.reachability = Reachability(hostname: hostname)
     }
     
