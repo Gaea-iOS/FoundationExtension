@@ -9,7 +9,18 @@
 import CoreTelephony
 import ReachabilitySwift
 
-extension Reachability {
+class NetworkStatus {
+    
+    private let reachability: Reachability?
+    
+    public init?() {
+        self.reachability = Reachability()
+    }
+    
+    public init?(hostname: String) {
+        self.reachability = Reachability(hostname: hostname)
+    }
+    
     
     public enum NetworkConnectionType {
         case unknow
@@ -22,7 +33,9 @@ extension Reachability {
     
     public var currentNetworkStatus: NetworkConnectionType {
         
-        let status = currentReachabilityStatus
+        guard let status = reachability?.currentReachabilityStatus else {
+            return .unknow
+        }
         
         switch status {
         case .reachableViaWiFi:
