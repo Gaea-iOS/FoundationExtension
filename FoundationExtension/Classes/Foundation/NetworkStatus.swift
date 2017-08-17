@@ -20,7 +20,7 @@ extension Reachability {
         case notReachable
     }
     
-    public var networkStatus: NetworkConnectionType {
+    public var currentNetworkStatus: NetworkConnectionType {
         
         let status = currentReachabilityStatus
         
@@ -28,13 +28,13 @@ extension Reachability {
         case .reachableViaWiFi:
             return .wifi
         case .reachableViaWWAN:
-            return cellularNetworkStatus
+            return currentCellularNetworkStatus
         case .notReachable:
             return .notReachable
         }
     }
     
-    private var cellularNetworkStatus: NetworkConnectionType {
+    private var currentCellularNetworkStatus: NetworkConnectionType {
         
         let networkStatus = CTTelephonyNetworkInfo()
         let currentStatus = networkStatus.currentRadioAccessTechnology
