@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         
 //        tabBarItem.badgeValue = "558"
         
+        
+        
         barButtomItem?.markType = .dot
         barButtomItem?.markValue = "6"
         
