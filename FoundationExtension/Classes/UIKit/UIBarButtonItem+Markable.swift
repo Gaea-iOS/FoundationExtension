@@ -17,7 +17,12 @@ extension UIBarButtonItem: Markable {
 extension UIBarButtonItem {
     
     fileprivate var imageView: UIView? {
-        return findFirstSubview(withClassName: "UIImageView")
+//        return findFirstSubview(withClassName: "UIImageView")
+        if let view = findFirstSubview(withClassName: "UIImageView") {
+            return view
+        } else {
+            return findFirstSubview(withClassName: "_UIModernBarButton")
+        }
     }
     
     private func findFirstSubview(withClassName className: String) -> UIView? {
