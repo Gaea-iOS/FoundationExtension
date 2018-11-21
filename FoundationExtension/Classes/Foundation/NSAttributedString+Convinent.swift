@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    public func toAttributedString(attributes: [NSAttributedStringKey: Any]? = nil) -> NSAttributedString {
+    public func toAttributedString(attributes: [NSAttributedString.Key: Any]? = nil) -> NSAttributedString {
         return NSAttributedString(string: self, attributes: attributes)
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "FoundationExtension",
-  "version": "0.4.0",
+  "version": "0.4.5",
   "summary": "an extension for NSFoundation and UIKit",
   "description": "an extension for NSFoundation and UIKit and some utils.",
   "homepage": "https://github.com/Gaea-iOS/FoundationExtension",
@@ -13,16 +13,10 @@
   },
   "source": {
     "git": "https://github.com/Gaea-iOS/FoundationExtension.git",
-    "tag": "0.4.0"
+    "tag": "0.4.5"
   },
   "platforms": {
     "ios": "8.0"
-  },
-  "frameworks": "CoreTelephony",
-  "dependencies": {
-    "ReachabilitySwift": [
-      "~> 3"
-    ]
   },
   "subspecs": [
     {
@@ -37,8 +31,8 @@
       "name": "UIKit",
       "source_files": "FoundationExtension/Classes/UIKit/**/*",
       "dependencies": {
-        "UICKeyChainStore": [
-
+        "KeychainAccess": [
+          "~> 3.1.2"
         ]
       }
     }

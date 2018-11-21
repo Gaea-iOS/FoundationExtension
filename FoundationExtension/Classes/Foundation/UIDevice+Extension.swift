@@ -7,14 +7,19 @@
 //
 
 import Foundation
-import UICKeyChainStore
+import KeychainAccess
 
 extension UIDevice {
 
     public var deviceId: String {
-        guard let deviceId = UICKeyChainStore.string(forKey: "DeviceUniqueIdentifier") else {
+        assert(Bundle.main.bundleIdentifier != nil, "Bundle.main.bundleIdentifier must not be nil")
+        let bundleId = Bundle.main.bundleIdentifier!
+        let keychain = Keychain(service: bundleId)
+        let deviceIdKey = "device_unique_identifier"
+
+        guard let deviceId = keychain[deviceIdKey] else {
             let deviceId = UUID().uuidString
-            UICKeyChainStore.setString(deviceId, forKey: "DeviceUniqueIdentifier")
+            keychain[deviceIdKey] = deviceId
             return deviceId
         }
         return deviceId

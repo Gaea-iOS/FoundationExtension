@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var button = UIBarButtonItem(image: UIImage(named: "QQ20170720-0")!, style: .plain, target: nil, action: nil)
+        let button = UIBarButtonItem(image: UIImage(named: "QQ20170720-0")!, style: .plain, target: nil, action: nil)
         self.navigationItem.rightBarButtonItem = button
         button.markValue = "5"
         
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clickType1( sender: UIButton) {
-        var sender = sender
+        let sender = sender
         navigationController?.tabBarItem.markType = .dot
         sender.markValue = "5"
     }

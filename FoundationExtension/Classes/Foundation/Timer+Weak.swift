@@ -58,13 +58,13 @@ public extension Timer {
     /// By default, the timer is scheduled on the current run loop for the default mode.
     /// Specify `runLoop` or `modes` to override these defaults.
 
-    func start(runLoop: RunLoop = RunLoop.current, modes: RunLoopMode...) {
+    func start(runLoop: RunLoop = RunLoop.current, modes: RunLoop.Mode...) {
 
         // Common Modes包含default modes,modal modes,event Tracking modes.
         // 从NSTimer的失效性谈起（一）：关于NSTimer和NSRunLoop
         // https://yq.aliyun.com/articles/17710
 
-        let modes = modes.isEmpty ? [.commonModes] : modes
+        let modes = modes.isEmpty ? [RunLoop.Mode.common] : modes
 
         for mode in modes {
             runLoop.add(self, forMode: mode)

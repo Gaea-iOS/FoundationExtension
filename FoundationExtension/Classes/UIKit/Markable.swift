@@ -124,7 +124,7 @@ extension Markable {
         guard let markAttachView = markAttachView else {return}
         markView.removeFromSuperview()
         markAttachView.addSubview(markView)
-        markAttachView.bringSubview(toFront: markView)
+        markAttachView.bringSubviewToFront(markView)
         markAttachView.clipsToBounds = false
         
         let attachViewFrame = markAttachView.frame

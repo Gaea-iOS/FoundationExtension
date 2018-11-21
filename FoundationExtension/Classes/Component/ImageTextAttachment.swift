@@ -47,7 +47,7 @@ open class ImageTextAttachment: NSTextAttachment {
         }
 
         var y: CGFloat = {
-            let font = textContainer?.layoutManager?.textStorage?.attribute(NSAttributedStringKey.font, at: charIndex, effectiveRange: nil) as? UIFont
+            let font = textContainer?.layoutManager?.textStorage?.attribute(NSAttributedString.Key.font, at: charIndex, effectiveRange: nil) as? UIFont
             let fontDescender = font?.descender ?? 0
             return fontDescender
         }()

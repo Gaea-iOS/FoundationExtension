@@ -42,7 +42,7 @@ an extension for NSFoundation and UIKit and some utils.
 
     s.subspec 'UIKit' do |uk|
         uk.source_files = 'FoundationExtension/Classes/UIKit/**/*'
-        uk.dependency 'UICKeyChainStore'
+        uk.dependency 'KeychainAccess', '~> 3.1.2'
     end
 
   # s.resource_bundles = {
@@ -52,6 +52,6 @@ an extension for NSFoundation and UIKit and some utils.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-    s.frameworks = 'CoreTelephony'
-    s.dependency 'ReachabilitySwift', '~> 3'
+  #  s.frameworks = 'CoreTelephony'
+  #  s.dependency 'ReachabilitySwift', '~> 3'
 end
