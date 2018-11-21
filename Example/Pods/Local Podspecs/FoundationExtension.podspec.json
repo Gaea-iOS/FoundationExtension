@@ -1,6 +1,6 @@
 {
   "name": "FoundationExtension",
-  "version": "0.4.5",
+  "version": "0.5.0",
   "summary": "an extension for NSFoundation and UIKit",
   "description": "an extension for NSFoundation and UIKit and some utils.",
   "homepage": "https://github.com/Gaea-iOS/FoundationExtension",
@@ -13,10 +13,10 @@
   },
   "source": {
     "git": "https://github.com/Gaea-iOS/FoundationExtension.git",
-    "tag": "0.4.5"
+    "tag": "0.5.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "subspecs": [
     {
