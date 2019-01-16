@@ -13,6 +13,7 @@
 		19B645C8E43CA386C499AAD99CF6C287 /* NSAttributedString+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70EE13267D3F571024DEF7F2E18F871 /* NSAttributedString+Size.swift */; };
 		19DA604EEB5517320D804FD076083A73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712CE964098B6A842F3F3531ADB90CBA /* Foundation.framework */; };
 		1AE46A51FEC7987ED13179A2EA48A817 /* Pods-FoundationExtension_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA04AB2C0CD06796B6C9719A1EB532 /* Pods-FoundationExtension_Tests-dummy.m */; };
+		1BF28DC221EEE11A005B7770 /* DDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF28DC121EEE11A005B7770 /* DDButton.swift */; };
 		2A232321DD4ED9C6EF1D1B230BDF8006 /* UIView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764929502746CB9184678CC6D9756DA6 /* UIView+IBDesignable.swift */; };
 		2E09C76FDDF23B3037075A3836716CF2 /* UIPickerView+Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6555214DB0CFE49C345367DAB66AEFD /* UIPickerView+Separator.swift */; };
 		2F2B2FEBE7ABB7DE513A31B824AC279F /* FoundationExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BFB78F68A444C20B35D4D1DE4A4114D6 /* FoundationExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,6 +89,7 @@
 		0FE9C5B9D7019F8B0AEFF1646D6A7D0E /* NSAttributedString+Convinent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Convinent.swift"; path = "FoundationExtension/Classes/Foundation/NSAttributedString+Convinent.swift"; sourceTree = "<group>"; };
 		14032DF6954A3E79EDED56E679D00E46 /* DownCounter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DownCounter.swift; path = FoundationExtension/Classes/Component/DownCounter.swift; sourceTree = "<group>"; };
 		17A7492FC932A4F9F943BF2CA455C609 /* Pods-FoundationExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoundationExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1BF28DC121EEE11A005B7770 /* DDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDButton.swift; sourceTree = "<group>"; };
 		1F40D3F8525DC3C2C64E7639E2A90E17 /* String+ToNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+ToNumber.swift"; path = "FoundationExtension/Classes/Foundation/String+ToNumber.swift"; sourceTree = "<group>"; };
 		2A56EB26D8BB9DE06435A5821AA5EF0F /* FoundationExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FoundationExtension-dummy.m"; sourceTree = "<group>"; };
 		2B472BC60C275B5785DF95A0B8D4BCE8 /* KeychainAccess.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainAccess.xcconfig; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				764929502746CB9184678CC6D9756DA6 /* UIView+IBDesignable.swift */,
 				6C243467442550EB078C0D08E543ABA4 /* UIView+Parent.swift */,
 				FC0F949BD57731AD065060D8BB43FE10 /* UIView+Snapshot.swift */,
+				1BF28DC121EEE11A005B7770 /* DDButton.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				8111DFD267F6AF1F8590DE24F859662D /* UIButton+IBInspectable.swift in Sources */,
 				702C63381A2F4BC38F8A5F430FD67777 /* UIButton+Markable.swift in Sources */,
 				D529286CA49E39ACEF0DFAD419DC7358 /* UIDevice+Extension.swift in Sources */,
+				1BF28DC221EEE11A005B7770 /* DDButton.swift in Sources */,
 				85B74B0972EFB002442328419BF9B1CA /* UIImage+FromColor.swift in Sources */,
 				2E09C76FDDF23B3037075A3836716CF2 /* UIPickerView+Separator.swift in Sources */,
 				A5A1A67F18EECBA3FB7A87982230F2CB /* UITabBarItem+Markable.swift in Sources */,
