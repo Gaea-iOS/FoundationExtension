@@ -7,12 +7,13 @@
 
 import UIKit
 
+@IBDesignable
 open class DDButton: UIButton {
 
-    public enum ImagePosition {
-        case left
-        case right
-        case top
+    public enum ImagePosition: Int {
+        case left = 0
+        case right = 1
+        case top = 2
     }
 
     open var imagePosition: ImagePosition = .left {
@@ -22,6 +23,13 @@ open class DDButton: UIButton {
         }
     }
 
+    public var imagePositionValue: Int {
+        get {
+            return imagePosition.rawValue
+        }
+    }
+
+    @IBInspectable
     open var spacing: CGFloat = 0.0 {
         didSet {
             setNeedsLayout()

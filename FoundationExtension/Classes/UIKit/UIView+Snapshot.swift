@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
     
     public var snapshotImage: UIImage {
-        UIGraphicsBeginImageContext(bounds.size)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
         defer { UIGraphicsEndImageContext() }
         
         let context = UIGraphicsGetCurrentContext()!
