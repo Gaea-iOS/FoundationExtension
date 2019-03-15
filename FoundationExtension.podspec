@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FoundationExtension'
-  s.version          = '0.5.8'
+  s.version          = '0.6.0'
   s.summary          = 'an extension for NSFoundation and UIKit'
 
 # This description is used to generate tags and improve search results.

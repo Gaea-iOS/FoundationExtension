@@ -15,6 +15,7 @@
 		1AE46A51FEC7987ED13179A2EA48A817 /* Pods-FoundationExtension_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA04AB2C0CD06796B6C9719A1EB532 /* Pods-FoundationExtension_Tests-dummy.m */; };
 		1B206B1F21EEFBCA001AA59C /* DDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B206B1E21EEFBCA001AA59C /* DDButton.swift */; };
 		1B206B3421F07444001AA59C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B206B3321F07444001AA59C /* Array+Extension.swift */; };
+		1BB1FD3C223B3E9800AA7E91 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1FD3B223B3E9800AA7E91 /* UIView+CornerRadius.swift */; };
 		2A232321DD4ED9C6EF1D1B230BDF8006 /* UIView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764929502746CB9184678CC6D9756DA6 /* UIView+IBDesignable.swift */; };
 		2E09C76FDDF23B3037075A3836716CF2 /* UIPickerView+Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6555214DB0CFE49C345367DAB66AEFD /* UIPickerView+Separator.swift */; };
 		2F2B2FEBE7ABB7DE513A31B824AC279F /* FoundationExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BFB78F68A444C20B35D4D1DE4A4114D6 /* FoundationExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -92,6 +93,7 @@
 		17A7492FC932A4F9F943BF2CA455C609 /* Pods-FoundationExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoundationExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1B206B1E21EEFBCA001AA59C /* DDButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DDButton.swift; path = FoundationExtension/Classes/UIKit/DDButton.swift; sourceTree = "<group>"; };
 		1B206B3321F07444001AA59C /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Array+Extension.swift"; path = "FoundationExtension/Classes/Foundation/Array+Extension.swift"; sourceTree = "<group>"; };
+		1BB1FD3B223B3E9800AA7E91 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+CornerRadius.swift"; path = "FoundationExtension/Classes/UIKit/UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		1F40D3F8525DC3C2C64E7639E2A90E17 /* String+ToNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+ToNumber.swift"; path = "FoundationExtension/Classes/Foundation/String+ToNumber.swift"; sourceTree = "<group>"; };
 		2A56EB26D8BB9DE06435A5821AA5EF0F /* FoundationExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FoundationExtension-dummy.m"; sourceTree = "<group>"; };
 		2B472BC60C275B5785DF95A0B8D4BCE8 /* KeychainAccess.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainAccess.xcconfig; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				764929502746CB9184678CC6D9756DA6 /* UIView+IBDesignable.swift */,
 				6C243467442550EB078C0D08E543ABA4 /* UIView+Parent.swift */,
 				FC0F949BD57731AD065060D8BB43FE10 /* UIView+Snapshot.swift */,
+				1BB1FD3B223B3E9800AA7E91 /* UIView+CornerRadius.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				C0415A0C4FDE5270BFDE673262C915C4 /* delay.swift in Sources */,
 				DC3C1B83011A22C44A07952DEC63A45E /* DownCounter.swift in Sources */,
 				4C2161BDE1C23F8AFA6B9E4EE81B4A9F /* FoundationExtension-dummy.m in Sources */,
+				1BB1FD3C223B3E9800AA7E91 /* UIView+CornerRadius.swift in Sources */,
 				1B206B3421F07444001AA59C /* Array+Extension.swift in Sources */,
 				15962FBABD1A6FC84C23FF8A4F2AA8D9 /* ImageTextAttachment.swift in Sources */,
 				1097C060C239FE93CC3D3A1D2BBE74C7 /* Markable.swift in Sources */,
