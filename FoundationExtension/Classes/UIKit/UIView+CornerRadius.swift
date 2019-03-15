@@ -17,7 +17,7 @@ extension UIView {
      *  @param rect    需要设置的圆角view的rect，一般传bounds即可
      */
 
-    func addRoundedCorners(_ corners: UIRectCorner, radii: CGSize, viewRect: CGRect) {
+    public func addRoundedCorners(_ corners: UIRectCorner, radii: CGSize, viewRect: CGRect) {
         let rounded = UIBezierPath(roundedRect: viewRect, byRoundingCorners: corners, cornerRadii: radii)
         let shape = CAShapeLayer()
         shape.path = rounded.cgPath
