@@ -57,7 +57,7 @@ public class DownCounter {
         }
     }
     
-    private func stop() {
+    public func stop() {
         isCounting = false
         timer?.invalidate()
     }
