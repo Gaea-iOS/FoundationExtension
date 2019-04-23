@@ -56,6 +56,14 @@ public class DownCounter {
             }
         }
     }
+	
+	public func resume() {
+		start(count: left)
+	}
+	
+	public func pause() {
+		stop()
+	}
     
     public func stop() {
         isCounting = false
